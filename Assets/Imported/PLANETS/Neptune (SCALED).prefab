@@ -54,11 +54,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2adab19a9475cc54fac6e5b9e6f25a35, type: 2}
     - target: {fileID: 919132149155446097, guid: 6482471a423adcf4a9fa315e882a0254, type: 3}
       propertyPath: m_Name
-      value: Neptune
+      value: Neptune (SCALED)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 6482471a423adcf4a9fa315e882a0254, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 6482471a423adcf4a9fa315e882a0254, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 6482471a423adcf4a9fa315e882a0254, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 6482471a423adcf4a9fa315e882a0254, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.54
+      value: -4.589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 6482471a423adcf4a9fa315e882a0254, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

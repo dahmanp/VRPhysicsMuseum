@@ -4936,12 +4936,13 @@ MonoBehaviour:
     Mo: 4.536300182342529
   planetsParent: {fileID: 571785276}
   scaledPlanetsParent: {fileID: 605760639}
-  scaled: 1
-  startYear: 2004
-  startMonth: 4
-  startDay: 7
-  timeScale: 86400
+  scaled: 0
+  orbitAnchor: {fileID: 1670452843}
+  startYear: 2025
+  startMonth: 12
+  startDay: 22
   playSimulation: 1
+  timeSpeed: 0
   distanceScale: 0.00000001
 --- !u!4 &516926982
 Transform:
@@ -6298,7 +6299,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8249556, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6796,6 +6798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1670452843}
   - {fileID: 516926982}
   - {fileID: 571785277}
   - {fileID: 605760640}
@@ -15667,6 +15670,37 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1670452842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670452843}
+  m_Layer: 0
+  m_Name: OrbitAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1670452843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670452842}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.67, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 717147544}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673999467
 GameObject:
   m_ObjectHideFlags: 0

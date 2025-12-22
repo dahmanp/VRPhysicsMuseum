@@ -4942,7 +4942,7 @@ MonoBehaviour:
   startMonth: 12
   startDay: 22
   playSimulation: 1
-  timeSpeed: 0
+  timeSpeed: 3
   distanceScale: 0.00000001
 --- !u!4 &516926982
 Transform:

@@ -41,6 +41,9 @@ public class OrbitSimulator : MonoBehaviour
 
     public enum TimeSpeed
     {
+        OneSecondPerSecond,
+        OneMinutePerSecond,
+        OneHourPerSecond,
         OneDayPerSecond,
         OneWeekPerSecond,
         OneMonthPerSecond,
@@ -99,10 +102,22 @@ public class OrbitSimulator : MonoBehaviour
 
     double GetTimeScaleSeconds()
     {
-        const double day = 86400.0;
+        const double second = 1.0;
+        const double minute = 60.0 * second;
+        const double hour = 60.0 * minute;
+        const double day = 24.0 * hour;
 
         switch (timeSpeed)
         {
+            case TimeSpeed.OneSecondPerSecond:
+                return second;
+
+            case TimeSpeed.OneMinutePerSecond:
+                return minute;
+
+            case TimeSpeed.OneHourPerSecond:
+                return hour;
+
             case TimeSpeed.OneDayPerSecond:
                 return day;
 

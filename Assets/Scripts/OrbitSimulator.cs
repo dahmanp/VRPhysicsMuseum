@@ -3,12 +3,6 @@ using UnityEngine;
 
 public class OrbitSimulator : MonoBehaviour
 {
-    /* NOTES TO FIX:
-     * Scale the prefabs so that they are close to the origin - that should fix the clipping problem
-     * Do we want axial rotation?
-     * 
-     */
-
     [System.Serializable]
     public class Planet
     {
@@ -22,6 +16,11 @@ public class OrbitSimulator : MonoBehaviour
         public double w;   // argument of periapsis (rad)
         public double W;   // longitude of ascending node (rad)
         public double Mo;  // mean anomaly at epoch (rad)
+
+        [Header("Axial Rotation")]
+        public float axialTiltDeg;
+        public float rotationPeriodSeconds;
+
     }
 
     [Header("Planets")]
@@ -57,7 +56,9 @@ public class OrbitSimulator : MonoBehaviour
 
     [Header("Unity Scaling")]
     public float distanceScale = 1f / 1e8f;
+
     const double mu = 1.32712440018e11; // Sun GM (km^3 / s^2)
+
     double simulationTimeSeconds;
     double epochJD;
 
@@ -67,99 +68,107 @@ public class OrbitSimulator : MonoBehaviour
     {
         epochJD = JulianDate(2004, 4, 7);
         ResetSimulation();
+        InitializeAxialTilts(planets);
+        InitializeAxialTilts(scaledPlanets);
     }
 
     void Update()
     {
+        double deltaSimSeconds = 0.0;
+
         if (playSimulation)
-            simulationTimeSeconds += Time.deltaTime * GetTimeScaleSeconds();
-
-        if (scaled)
         {
-            scaledPlanetsParent.SetActive(true);
-            planetsParent.SetActive(false);
-
-            foreach (var planet in scaledPlanets)
-            {
-                if (planet.body != null)
-                    planet.body.transform.position =
-                        ComputeOrbitPosition(planet, simulationTimeSeconds);
-            }
+            deltaSimSeconds = Time.deltaTime * GetTimeScaleSeconds();
+            simulationTimeSeconds += deltaSimSeconds;
         }
-        else
-        {
-            scaledPlanetsParent.SetActive(false);
-            planetsParent.SetActive(true);
 
-            foreach (var planet in planets)
-            {
-                if (planet.body != null)
-                    planet.body.transform.position =
-                        ComputeOrbitPosition(planet, simulationTimeSeconds);
-            }
+        Planet[] activePlanets = scaled ? scaledPlanets : planets;
+
+        scaledPlanetsParent.SetActive(scaled);
+        planetsParent.SetActive(!scaled);
+
+        foreach (var planet in activePlanets)
+        {
+            if (planet.body == null)
+                continue;
+
+            planet.body.transform.position =
+                ComputeOrbitPosition(planet, simulationTimeSeconds);
+
+            ApplyAxialRotation(planet, deltaSimSeconds);
         }
     }
+
+    // TIME SCALE
 
     double GetTimeScaleSeconds()
     {
         const double second = 1.0;
-        const double minute = 60.0 * second;
-        const double hour = 60.0 * minute;
-        const double day = 24.0 * hour;
+        const double minute = 60.0;
+        const double hour = 3600.0;
+        const double day = 86400.0;
 
         switch (timeSpeed)
         {
-            case TimeSpeed.OneSecondPerSecond:
-                return second;
-
-            case TimeSpeed.OneMinutePerSecond:
-                return minute;
-
-            case TimeSpeed.OneHourPerSecond:
-                return hour;
-
-            case TimeSpeed.OneDayPerSecond:
-                return day;
-
-            case TimeSpeed.OneWeekPerSecond:
-                return 7.0 * day;
-
-            case TimeSpeed.OneMonthPerSecond:
-                return 30.0 * day;
-
-            case TimeSpeed.OneYearPerSecond:
-                return 365.25 * day;
-
-            case TimeSpeed.OneDecadePerSecond:
-                return 10.0 * 365.25 * day;
-
-            default:
-                return day;
+            case TimeSpeed.OneSecondPerSecond: return second;
+            case TimeSpeed.OneMinutePerSecond: return minute;
+            case TimeSpeed.OneHourPerSecond: return hour;
+            case TimeSpeed.OneDayPerSecond: return day;
+            case TimeSpeed.OneWeekPerSecond: return 7.0 * day;
+            case TimeSpeed.OneMonthPerSecond: return 30.0 * day;
+            case TimeSpeed.OneYearPerSecond: return 365.25 * day;
+            case TimeSpeed.OneDecadePerSecond: return 10.0 * 365.25 * day;
+            default: return day;
         }
     }
 
-    // ORBIT CALCULATION
+    // AXIAL ROTATION
+
+    void InitializeAxialTilts(Planet[] planetArray)
+    {
+        if (planetArray == null) return;
+
+        foreach (var planet in planetArray)
+        {
+            if (planet.body == null) continue;
+
+            planet.body.transform.localRotation =
+                Quaternion.Euler(planet.axialTiltDeg, 0f, 0f);
+        }
+    }
+
+    void ApplyAxialRotation(Planet planet, double deltaSimSeconds)
+    {
+        if (planet.rotationPeriodSeconds <= 0.0)
+            return;
+
+        double degreesPerSecond = 360.0 / planet.rotationPeriodSeconds;
+        float deltaDegrees = (float)(degreesPerSecond * deltaSimSeconds);
+
+        planet.body.transform.Rotate(
+            Vector3.up,
+            deltaDegrees,
+            Space.Self
+        );
+    }
+
+    // ORBIT CALCULATION 
 
     Vector3 ComputeOrbitPosition(Planet p, double t)
     {
-        // Mean motion
         double n = System.Math.Sqrt(mu / (p.a * p.a * p.a));
         double M = p.Mo + n * t;
 
-        // Solve Kepler
         double E = SolveKepler(p.e, M);
 
-        // True anomaly
         double theta = 2.0 * System.Math.Atan(
             System.Math.Sqrt((1 + p.e) / (1 - p.e)) *
             System.Math.Tan(E / 2.0)
         );
 
-        // Radius
         double r = p.a * (1 - p.e * p.e) /
                    (1 + p.e * System.Math.Cos(theta));
 
-        // Heliocentric position (km)
         double x =
             r * (System.Math.Cos(p.W) * System.Math.Cos(p.w + theta)
             - System.Math.Sin(p.W) * System.Math.Sin(p.w + theta) * System.Math.Cos(p.i));
@@ -171,17 +180,15 @@ public class OrbitSimulator : MonoBehaviour
         double z =
             r * (System.Math.Sin(p.w + theta) * System.Math.Sin(p.i));
 
-        // Unity local position
         Vector3 localPos = new Vector3(
             (float)x * distanceScale,
             (float)z * distanceScale,
             (float)y * distanceScale
         );
 
-        if (orbitAnchor != null)
-            return orbitAnchor.TransformPoint(localPos);
-
-        return localPos;
+        return orbitAnchor != null
+            ? orbitAnchor.TransformPoint(localPos)
+            : localPos;
     }
 
     double SolveKepler(double e, double M)
@@ -190,18 +197,15 @@ public class OrbitSimulator : MonoBehaviour
         if (M < 0) M += 2.0 * System.Math.PI;
 
         double E = M;
-
         for (int i = 0; i < 30; i++)
         {
-            double f = E - e * System.Math.Sin(E) - M;
-            double fp = 1 - e * System.Math.Cos(E);
-            E -= f / fp;
+            E -= (E - e * System.Math.Sin(E) - M)
+               / (1 - e * System.Math.Cos(E));
         }
-
         return E;
     }
 
-    // DATE UTIL
+    // DATE
 
     double JulianDate(int y, int m, int d)
     {

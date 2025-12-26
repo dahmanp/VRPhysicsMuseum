@@ -4813,6 +4813,8 @@ MonoBehaviour:
     w: 0.50832
     W: 0.84355
     Mo: 3.05074
+    axialTiltDeg: 0.03
+    rotationPeriodSeconds: 5067000
   - name: Venus
     body: {fileID: 2141295684}
     a: 108208874.373622
@@ -4821,6 +4823,8 @@ MonoBehaviour:
     w: 0.957353
     W: 1.33833
     Mo: 0.880462
+    axialTiltDeg: 177.4
+    rotationPeriodSeconds: -20995200
   - name: Earth
     body: {fileID: 1825530619}
     a: 149597800
@@ -4829,6 +4833,8 @@ MonoBehaviour:
     w: 1.9933
     W: -0.1965
     Mo: -0.0433
+    axialTiltDeg: 23.44
+    rotationPeriodSeconds: 86164
   - name: Mars
     body: {fileID: 2004665905}
     a: 227936529.518918
@@ -4837,6 +4843,8 @@ MonoBehaviour:
     w: 4.9997
     W: 0.86531
     Mo: 0.33881
+    axialTiltDeg: 25.19
+    rotationPeriodSeconds: 88642
   - name: Jupiter
     body: {fileID: 428262107}
     a: 778411658.897378
@@ -4845,6 +4853,8 @@ MonoBehaviour:
     w: -1.4975
     W: 1.755
     Mo: 0.34297
+    axialTiltDeg: 3.13
+    rotationPeriodSeconds: 35730
   - name: Saturn
     body: {fileID: 1111809154}
     a: 1426724738.3173
@@ -4853,6 +4863,8 @@ MonoBehaviour:
     w: -0.37146
     W: 1.9847
     Mo: -0.74155
+    axialTiltDeg: 26.73
+    rotationPeriodSeconds: 38340
   - name: Uranus
     body: {fileID: 1265169955}
     a: 2870970863.14735
@@ -4861,6 +4873,8 @@ MonoBehaviour:
     w: 1.68833
     W: 1.29556
     Mo: 2.483044
+    axialTiltDeg: 97.77
+    rotationPeriodSeconds: -62064
   - name: Neptune
     body: {fileID: 2092564052}
     a: 4498250784.88834
@@ -4869,6 +4883,8 @@ MonoBehaviour:
     w: -1.5141
     W: 2.29898
     Mo: 4.5363
+    axialTiltDeg: 28.32
+    rotationPeriodSeconds: 57996
   scaledPlanets:
   - name: Mercury
     body: {fileID: 1249151189}
@@ -4878,6 +4894,8 @@ MonoBehaviour:
     w: 0.5083199739456177
     W: 0.8435500264167786
     Mo: 3.0507400035858154
+    axialTiltDeg: 0.03
+    rotationPeriodSeconds: 5067000
   - name: Venus
     body: {fileID: 21031203}
     a: 108208872
@@ -4886,6 +4904,8 @@ MonoBehaviour:
     w: 0.9573529958724976
     W: 1.3383300304412842
     Mo: 0.8804619908332825
+    axialTiltDeg: 177.4
+    rotationPeriodSeconds: -20995200
   - name: Earth
     body: {fileID: 767482633}
     a: 149597792
@@ -4894,6 +4914,8 @@ MonoBehaviour:
     w: 1.993299961090088
     W: -0.1965000033378601
     Mo: -0.043299999088048935
+    axialTiltDeg: 23.44
+    rotationPeriodSeconds: 86164
   - name: Mars
     body: {fileID: 1903189397}
     a: 227936528
@@ -4902,6 +4924,8 @@ MonoBehaviour:
     w: 4.99970006942749
     W: 0.86531001329422
     Mo: 0.338809996843338
+    axialTiltDeg: 25.19
+    rotationPeriodSeconds: 88642
   - name: Jupiter
     body: {fileID: 766222129}
     a: 778411648
@@ -4910,6 +4934,8 @@ MonoBehaviour:
     w: -1.497499942779541
     W: 1.7549999952316284
     Mo: 0.34297001361846924
+    axialTiltDeg: 3.13
+    rotationPeriodSeconds: 35730
   - name: Saturn
     body: {fileID: 477334747}
     a: 1426724736
@@ -4918,6 +4944,8 @@ MonoBehaviour:
     w: -0.3714599907398224
     W: 1.9846999645233154
     Mo: -0.7415500283241272
+    axialTiltDeg: 26.73
+    rotationPeriodSeconds: 38340
   - name: Uranus
     body: {fileID: 1864156675}
     a: 2870970880
@@ -4926,6 +4954,8 @@ MonoBehaviour:
     w: 1.688330054283142
     W: 1.2955600023269653
     Mo: 2.483043909072876
+    axialTiltDeg: 97.77
+    rotationPeriodSeconds: -62064
   - name: Neptune
     body: {fileID: 1343195417}
     a: 4498250752
@@ -4934,6 +4964,8 @@ MonoBehaviour:
     w: -1.5140999555587769
     W: 2.2989799976348877
     Mo: 4.536300182342529
+    axialTiltDeg: 28.32
+    rotationPeriodSeconds: 57996
   planetsParent: {fileID: 571785276}
   scaledPlanetsParent: {fileID: 605760639}
   scaled: 0

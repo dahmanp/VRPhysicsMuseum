@@ -238,12 +238,23 @@ public class OrbitSimulator : MonoBehaviour
 
     public void SetScaleFromCheck()
     {
-        scaled = scaleToggle;
+        if (scaled) {
+            scaled = false;
+        } else
+        {
+            scaled = true;
+        }
     }
 
     public void SetPlayingFromCheck()
     {
-        playSimulation = playingToggle;
+        if (playSimulation) {
+            playSimulation = false;
+        }
+        else
+        {
+            playSimulation = true;
+        }
     }
 
     public void SetZoomFromCheck()
@@ -256,8 +267,6 @@ public class OrbitSimulator : MonoBehaviour
         int m = int.Parse(monthDropdown.text);
         int d = int.Parse(dayDropdown.text);
         int y = int.Parse(yearDropdown.text);
-
-        Debug.Log(m);
 
         if (m > 12)
         {
@@ -306,7 +315,10 @@ public class OrbitSimulator : MonoBehaviour
             }
         }
 
-        //ADD THE RESET SIM FNCT
+        startMonth = m;
+        startDay = d;
+        startYear = y;
+        ResetSimulation();
     }
 
     public void SetTimeSpeedFromDropdown()

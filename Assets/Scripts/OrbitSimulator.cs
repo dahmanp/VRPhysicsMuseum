@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class OrbitSimulator : MonoBehaviour
 {
@@ -61,6 +63,15 @@ public class OrbitSimulator : MonoBehaviour
 
     double simulationTimeSeconds;
     double epochJD;
+
+    [Header("UI")]
+    public TMP_Dropdown timeDropdown;
+    public Toggle scaleToggle;
+    public Toggle playingToggle;
+    public Toggle zoomToggle;
+    public TMP_InputField monthDropdown;
+    public TMP_InputField dayDropdown;
+    public TMP_InputField yearDropdown;
 
     // UNITY
 
@@ -221,5 +232,86 @@ public class OrbitSimulator : MonoBehaviour
     {
         double startJD = JulianDate(startYear, startMonth, startDay);
         simulationTimeSeconds = (startJD - epochJD) * 86400.0;
+    }
+
+    // UI
+
+    public void SetScaleFromCheck()
+    {
+        scaled = scaleToggle;
+    }
+
+    public void SetPlayingFromCheck()
+    {
+        playSimulation = playingToggle;
+    }
+
+    public void SetZoomFromCheck()
+    {
+        // ADD ZOOM FNCT CALL
+    }
+
+    public void DateChange()
+    {
+        int m = int.Parse(monthDropdown.text);
+        int d = int.Parse(dayDropdown.text);
+        int y = int.Parse(yearDropdown.text);
+
+        Debug.Log(m);
+
+        if (m > 12)
+        {
+            monthDropdown.text = 12.ToString();
+            m = 12;
+        }
+        else if (m < 1)
+        {
+            monthDropdown.text = 1.ToString();
+            m = 1;
+        }
+
+        if (m == 2)
+        {
+            if (y % 4 == 0)
+            {
+                if (d > 29)
+                {
+                    dayDropdown.text = 29.ToString();
+                    d = 29;
+                }
+            }
+            else
+            {
+                if (d > 28)
+                {
+                    dayDropdown.text = 28.ToString();
+                    d = 28;
+                }
+            }
+        }
+        else if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12)
+        {
+            if (d > 31)
+            {
+                dayDropdown.text = 31.ToString();
+                d = 31;
+            }
+        }
+        else
+        {
+            if (d > 30)
+            {
+                dayDropdown.text = 30.ToString();
+                d = 30;
+            }
+        }
+
+        //ADD THE RESET SIM FNCT
+    }
+
+    public void SetTimeSpeedFromDropdown()
+    {
+        int value = timeDropdown.value;
+        timeSpeed = (TimeSpeed)value;
     }
 }

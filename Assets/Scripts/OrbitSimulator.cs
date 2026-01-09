@@ -45,7 +45,7 @@ public class OrbitSimulator : MonoBehaviour
 
     void ComputeOrbit(Planet p, double t0)
     {
-        double period = 2.0 * Mathf.PI * Mathf.Sqrt((float)(p.a * p.a * p.a / mu));
+        double period = .1 * Mathf.PI * Mathf.Sqrt((float)(p.a * p.a * p.a / mu));
 
         for (int j = 0; j < 1000; j++)
         {

@@ -6058,7 +6058,7 @@ MonoBehaviour:
   startYear: 2025
   startMonth: 12
   startDay: 22
-  playSimulation: 1
+  playSimulation: 0
   timeSpeed: 3
   distanceScale: 0.00000001
   timeDropdown: {fileID: 444584362}
@@ -20299,7 +20299,7 @@ Transform:
   m_GameObject: {fileID: 1670452842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 11.67, y: 0, z: 0}
+  m_LocalPosition: {x: 11.67, y: 5.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

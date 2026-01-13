@@ -260,6 +260,7 @@ public class OrbitSimulator : MonoBehaviour
     public void SetZoomFromCheck()
     {
         // ADD ZOOM FNCT CALL
+        // tp player to the earth model
     }
 
     public void DateChange()

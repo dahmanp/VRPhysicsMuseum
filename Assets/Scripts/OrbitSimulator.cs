@@ -34,6 +34,10 @@ public class OrbitSimulator : MonoBehaviour
     public GameObject scaledPlanetsParent;
     public bool scaled;
 
+    [Header("Planet Zoom Locations")]
+    public GameObject[] planetZoomLocations;
+    public GameObject[] scaledPlanetZoomLocations;
+
     [Header("Orbit Anchor")]
     public Transform orbitAnchor;
 
@@ -57,6 +61,8 @@ public class OrbitSimulator : MonoBehaviour
     [Header("Playback")]
     public bool playSimulation = true;
     public TimeSpeed timeSpeed = TimeSpeed.OneDayPerSecond;
+    public bool orbitVisual = false;
+    public bool coordinateFrame = false;
 
     [Header("Unity Scaling")]
     public float distanceScale = 1f / 1e8f;
@@ -71,9 +77,12 @@ public class OrbitSimulator : MonoBehaviour
     public Toggle scaleToggle;
     public Toggle playingToggle;
     public Toggle zoomToggle;
+    public Toggle coordinateFrameToggle;
+    public Toggle orbitVisualToggle;
     public TMP_InputField monthDropdown;
     public TMP_InputField dayDropdown;
     public TMP_InputField yearDropdown;
+    public TMP_Dropdown zoomDropdown;
 
     // UNITY
 
@@ -259,12 +268,6 @@ public class OrbitSimulator : MonoBehaviour
         }
     }
 
-    public void SetZoomFromCheck()
-    {
-        // ADD ZOOM FNCT CALL
-        // tp player to the earth model
-    }
-
     public void DateChange()
     {
         int m = int.Parse(monthDropdown.text);
@@ -328,5 +331,55 @@ public class OrbitSimulator : MonoBehaviour
     {
         int value = timeDropdown.value;
         timeSpeed = (TimeSpeed)value;
+    }
+
+    public void SetZoomLocationFromDropdown()
+    {
+        int value = zoomDropdown.value;
+        SetZoomActive(value);
+        //teleport user to zoom location
+        // TELEPORT PLAYER TO planetZoomLocation[value];
+    }
+
+    void SetZoomActive(int value)
+    {
+        if (scaled) {
+            foreach(GameObject planetLocation in scaledPlanetZoomLocations)
+            {
+                planetLocation.SetActive(false);
+            }
+            scaledPlanetZoomLocations[value].SetActive(true);
+        } else
+        {
+            foreach (GameObject planetLocation in planetZoomLocations)
+            {
+                planetLocation.SetActive(false);
+            }
+            planetZoomLocations[value].SetActive(true);
+        }
+    }
+
+    public void SetOrbitCircleVisualFromCheck()
+    {
+        if (orbitVisual)
+        {
+            orbitVisual = false;
+        }
+        else
+        {
+            orbitVisual = true;
+        }
+    }
+
+    public void SetCoordinateFrameVisualFromCheck()
+    {
+        if (coordinateFrame)
+        {
+            coordinateFrame = false;
+        }
+        else
+        {
+            coordinateFrame = true;
+        }
     }
 }

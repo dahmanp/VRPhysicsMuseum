@@ -1142,6 +1142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jupiter (SCALED)
       objectReference: {fileID: 0}
+    - target: {fileID: 6857778949635717713, guid: bf07c357d54a7b841966a128aade5e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5064,6 +5068,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Venus (SCALED)
       objectReference: {fileID: 0}
+    - target: {fileID: 2089912014048946594, guid: 0e9f13f1772f7a8408f0d3aae3722571, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2178404634845512256, guid: 0e9f13f1772f7a8408f0d3aae3722571, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.79
@@ -5324,6 +5332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth (SCALED)
       objectReference: {fileID: 0}
+    - target: {fileID: 4634027273768927422, guid: 83a70519441b11449a59240d6f7d8ece, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5405603697714027012, guid: 83a70519441b11449a59240d6f7d8ece, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3676713
@@ -5533,7 +5545,7 @@ Transform:
   m_GameObject: {fileID: 403324386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: -0.83, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10356,7 +10368,7 @@ Transform:
   m_GameObject: {fileID: 712007802}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: 0.77, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11069,7 +11081,7 @@ Transform:
   m_GameObject: {fileID: 759537284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: 0.78, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11913,6 +11925,10 @@ PrefabInstance:
     - target: {fileID: 6459289832465659843, guid: 991317374f63df84ba51fa5b7be8ae16, type: 3}
       propertyPath: m_Name
       value: Neptune (SCALED)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459289832465659843, guid: 991317374f63df84ba51fa5b7be8ae16, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20453,7 +20469,7 @@ Transform:
   m_GameObject: {fileID: 1290006633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20885,7 +20901,7 @@ Transform:
   m_GameObject: {fileID: 1297344249}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24499,6 +24515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mercury (SCALED)
       objectReference: {fileID: 0}
+    - target: {fileID: 7593466767680074145, guid: 1204715b99e52a143b812aba9e6cdd6a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -25158,7 +25178,7 @@ Transform:
   m_GameObject: {fileID: 1574420337}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26419,7 +26439,7 @@ Transform:
   m_GameObject: {fileID: 1618385278}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: 0.773, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28520,6 +28540,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mars (SCALED)
       objectReference: {fileID: 0}
+    - target: {fileID: 9193435423215118768, guid: 79ca52cd854a5e84880c56e246a930c9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -28928,6 +28952,10 @@ PrefabInstance:
     - target: {fileID: 8333082581063979922, guid: f2a6d010d1290ed49ba6b244befe2196, type: 3}
       propertyPath: m_Name
       value: Uranus (SCALED)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333082581063979922, guid: f2a6d010d1290ed49ba6b244befe2196, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8714147349961640232, guid: f2a6d010d1290ed49ba6b244befe2196, type: 3}
       propertyPath: m_LocalScale.x
@@ -32291,6 +32319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saturn (SCALED)
       objectReference: {fileID: 0}
+    - target: {fileID: 2302933744172521136, guid: 9a77dcfbadcdef047a1162120cca4db6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -34322,7 +34354,7 @@ Transform:
   m_GameObject: {fileID: 2017867173}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2520115, z: 0}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0}
   m_LocalScale: {x: 2.7198207, y: 2.7198207, z: 2.7198207}
   m_ConstrainProportionsScale: 0
   m_Children: []

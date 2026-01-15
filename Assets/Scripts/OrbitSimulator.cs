@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//SCALE FOR ORBITANCHOR??? 3.8355
+
 public class OrbitSimulator : MonoBehaviour
 {
     [System.Serializable]

@@ -344,16 +344,17 @@ public class OrbitSimulator : MonoBehaviour
     void SetZoomActive(int value)
     {
         if (scaled) {
-            foreach(GameObject planetLocation in scaledPlanetZoomLocations)
+            //Changed "planetLocation" to "platform"
+            foreach (GameObject platform in scaledPlanetZoomLocations)
             {
-                planetLocation.SetActive(false);
+                platform.SetActive(false);
             }
             scaledPlanetZoomLocations[value].SetActive(true);
         } else
-        {
-            foreach (GameObject planetLocation in planetZoomLocations)
+        {  
+            foreach (GameObject platform in planetZoomLocations)
             {
-                planetLocation.SetActive(false);
+                platform.SetActive(false);
             }
             planetZoomLocations[value].SetActive(true);
         }

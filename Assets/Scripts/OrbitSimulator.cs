@@ -61,7 +61,9 @@ public class OrbitSimulator : MonoBehaviour
     [Header("Playback")]
     public bool playSimulation = true;
     public TimeSpeed timeSpeed = TimeSpeed.OneDayPerSecond;
-    public bool orbitVisual = false;
+    //public bool orbitVisual = false;
+    public TrailRenderer[] orbitTrails;
+    public TrailRenderer[] scaledOrbitTrails;
     public bool coordinateFrame = false;
 
     [Header("Unity Scaling")]
@@ -76,7 +78,7 @@ public class OrbitSimulator : MonoBehaviour
     public TMP_Dropdown timeDropdown;
     public Toggle scaleToggle;
     public Toggle playingToggle;
-    public Toggle zoomToggle;
+    //public Toggle zoomToggle;
     public Toggle coordinateFrameToggle;
     public Toggle orbitVisualToggle;
     public TMP_InputField monthDropdown;
@@ -92,6 +94,41 @@ public class OrbitSimulator : MonoBehaviour
         ResetSimulation();
         InitializeAxialTilts(planets);
         InitializeAxialTilts(scaledPlanets);
+        setOrbitState(false);
+    }
+
+    void setOrbitState(bool on)
+    {
+        TrailRenderer[] orbitTrail = scaled ? scaledOrbitTrails : orbitTrails;
+        foreach(TrailRenderer orbit in orbitTrail)
+        {
+            //Debug.Log("test2");
+            if (on)
+            {
+                orbit.enabled = true;
+                //Debug.Log("test");
+            } else
+            {
+                orbit.enabled = false;
+                orbit.Clear();
+            }
+        }
+
+        TrailRenderer[] orbitTrail2 = !scaled ? scaledOrbitTrails : orbitTrails;
+        foreach (TrailRenderer orbit in orbitTrail2)
+        {
+            //Debug.Log("test2");
+            if (on)
+            {
+                orbit.enabled = true;
+                //Debug.Log("test");
+            }
+            else
+            {
+                orbit.enabled = false;
+                orbit.Clear();
+            }
+        }
     }
 
     void Update()
@@ -362,14 +399,15 @@ public class OrbitSimulator : MonoBehaviour
 
     public void SetOrbitCircleVisualFromCheck()
     {
-        if (orbitVisual)
+        /*if (orbitVisual)
         {
             orbitVisual = false;
         }
         else
         {
             orbitVisual = true;
-        }
+        }*/
+        setOrbitState(orbitVisualToggle.isOn);
     }
 
     public void SetCoordinateFrameVisualFromCheck()

@@ -316,10 +316,13 @@ public class OrbitSimulator : MonoBehaviour
         if (scaled)
         {
             scaled = false;
+            StartCoroutine(ResetLines());
         }
         else
         {
             scaled = true;
+            StartCoroutine(ResetLines());
+
         }
     }
 

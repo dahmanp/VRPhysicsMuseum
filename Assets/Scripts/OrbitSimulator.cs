@@ -87,6 +87,7 @@ public class OrbitSimulator : MonoBehaviour
     public TMP_InputField dayDropdown;
     public TMP_InputField yearDropdown;
     public TMP_Dropdown zoomDropdown;
+    public GameObject CoordinateFrameObject;
 
     // UNITY
 
@@ -282,13 +283,13 @@ public class OrbitSimulator : MonoBehaviour
     {
         double startJD = JulianDate(startYear, startMonth, startDay);
         simulationTimeSeconds = (startJD - epochJD) * 86400.0;
-        StartCoroutine(ResetTrailsAfterTeleport());
+        StartCoroutine(ResetLines());
     }
 
     //Gets rid of tangent lines after reset
     //Reset moves planets, then this clears it and turns it back on
     //SHould work with the toggle
-    IEnumerator ResetTrailsAfterTeleport()
+    IEnumerator ResetLines()
     {
         // Let Update() move planets to the reset position
         yield return null;
@@ -444,10 +445,12 @@ public class OrbitSimulator : MonoBehaviour
         if (coordinateFrame)
         {
             coordinateFrame = false;
+            CoordinateFrameObject.SetActive(false);
         }
         else
         {
             coordinateFrame = true;
+            CoordinateFrameObject.SetActive(true);
         }
     }
 }

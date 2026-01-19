@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+
 
 //SCALE FOR ORBITANCHOR??? 3.8355
 
@@ -280,15 +282,41 @@ public class OrbitSimulator : MonoBehaviour
     {
         double startJD = JulianDate(startYear, startMonth, startDay);
         simulationTimeSeconds = (startJD - epochJD) * 86400.0;
+        StartCoroutine(ResetTrailsAfterTeleport());
     }
+
+    //Gets rid of tangent lines after reset
+    //Reset moves planets, then this clears it and turns it back on
+    //SHould work with the toggle
+    IEnumerator ResetTrailsAfterTeleport()
+    {
+        // Let Update() move planets to the reset position
+        yield return null;
+
+        TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
+
+        foreach (var t in trails)
+            t.emitting = false; //Pause
+
+        foreach (var t in trails)
+            t.Clear(); //Clear
+
+        yield return null; //Wait
+
+        foreach (var t in trails)
+            t.emitting = true; //Resume
+    }
+
 
     // UI
 
     public void SetScaleFromCheck()
     {
-        if (scaled) {
+        if (scaled)
+        {
             scaled = false;
-        } else
+        }
+        else
         {
             scaled = true;
         }
@@ -408,6 +436,7 @@ public class OrbitSimulator : MonoBehaviour
             orbitVisual = true;
         }*/
         setOrbitState(orbitVisualToggle.isOn);
+        Debug.Log("Set Orbit Visual From Check"); //Toggle
     }
 
     public void SetCoordinateFrameVisualFromCheck()

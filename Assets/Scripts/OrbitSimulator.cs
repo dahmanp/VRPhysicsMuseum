@@ -39,6 +39,7 @@ public class OrbitSimulator : MonoBehaviour
     [Header("Planet Zoom Locations")]
     public GameObject[] planetZoomLocations;
     public GameObject[] scaledPlanetZoomLocations;
+    public GameObject mainTeleporter;
 
     [Header("Orbit Anchor")]
     public Transform orbitAnchor;
@@ -326,14 +327,24 @@ public class OrbitSimulator : MonoBehaviour
         }
     }
 
-    public void SetPlayingFromCheck()
+    public void SetPlayingFromCheck(bool platform)
     {
         if (playSimulation) {
             playSimulation = false;
+            if (platform)
+            {
+                playingToggle.isOn = false;
+            }
+            //playingToggle.isOn = false;
         }
         else
         {
             playSimulation = true;
+            if (platform)
+            {
+                playingToggle.isOn = true;
+            }
+            //playingToggle.isOn = true;
         }
     }
 
@@ -400,12 +411,29 @@ public class OrbitSimulator : MonoBehaviour
     {
         int value = timeDropdown.value;
         timeSpeed = (TimeSpeed)value;
+        zoomDropdown.value = value;
     }
 
     public void SetZoomLocationFromDropdown()
     {
         int value = zoomDropdown.value;
         SetZoomActive(value);
+
+        //reset time speed
+        timeDropdown.value = 4;
+        SetTimeSpeedFromDropdown();
+
+        //reset playback
+        playingToggle.isOn = true;
+        SetPlayingFromCheck(true);
+
+        //reset scaled
+        scaleToggle.isOn = false;
+        scaled = false;
+        //SetScaleFromCheck();
+
+        mainTeleporter.SetActive(true);
+
         //teleport user to zoom location
         // TELEPORT PLAYER TO planetZoomLocation[value];
     }

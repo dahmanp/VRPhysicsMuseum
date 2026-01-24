@@ -84,9 +84,12 @@ public class OrbitSimulator : MonoBehaviour
     //public Toggle zoomToggle;
     public Toggle coordinateFrameToggle;
     public Toggle orbitVisualToggle;
-    public TMP_InputField monthDropdown;
-    public TMP_InputField dayDropdown;
-    public TMP_InputField yearDropdown;
+    public Slider monthSlider;
+    public Slider daySlider;
+    public Slider yearSlider;
+    public TMP_Text monthLabel;
+    public TMP_Text dayLabel;
+    public TMP_Text yearLabel;
     public TMP_Dropdown zoomDropdown;
     public GameObject CoordinateFrameObject;
 
@@ -350,18 +353,18 @@ public class OrbitSimulator : MonoBehaviour
 
     public void DateChange()
     {
-        int m = int.Parse(monthDropdown.text);
-        int d = int.Parse(dayDropdown.text);
-        int y = int.Parse(yearDropdown.text);
+        int m = (int)monthSlider.value;// int.Parse(monthDropdown.text);
+        int d = (int)daySlider.value;// int.Parse(dayDropdown.text);
+        int y = (int)yearSlider.value;// int.Parse(yearDropdown.text);
 
         if (m > 12)
         {
-            monthDropdown.text = 12.ToString();
+            monthSlider.value = 12;
             m = 12;
         }
         else if (m < 1)
         {
-            monthDropdown.text = 1.ToString();
+            monthSlider.value = 1;
             m = 1;
         }
 
@@ -371,7 +374,7 @@ public class OrbitSimulator : MonoBehaviour
             {
                 if (d > 29)
                 {
-                    dayDropdown.text = 29.ToString();
+                    daySlider.value = 29;
                     d = 29;
                 }
             }
@@ -379,7 +382,7 @@ public class OrbitSimulator : MonoBehaviour
             {
                 if (d > 28)
                 {
-                    dayDropdown.text = 28.ToString();
+                    daySlider.value = 28;
                     d = 28;
                 }
             }
@@ -388,7 +391,7 @@ public class OrbitSimulator : MonoBehaviour
         {
             if (d > 31)
             {
-                dayDropdown.text = 31.ToString();
+                daySlider.value = 31;
                 d = 31;
             }
         }
@@ -396,7 +399,7 @@ public class OrbitSimulator : MonoBehaviour
         {
             if (d > 30)
             {
-                dayDropdown.text = 30.ToString();
+                daySlider.value = 30;
                 d = 30;
             }
         }
@@ -405,6 +408,13 @@ public class OrbitSimulator : MonoBehaviour
         startDay = d;
         startYear = y;
         ResetSimulation();
+    }
+
+    public void UpdateSliderLabel()
+    {
+        monthLabel.text = monthSlider.value.ToString();
+        dayLabel.text = daySlider.value.ToString();
+        yearLabel.text = yearSlider.value.ToString();
     }
 
     public void SetTimeSpeedFromDropdown()

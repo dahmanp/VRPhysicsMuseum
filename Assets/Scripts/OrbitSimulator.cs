@@ -40,6 +40,7 @@ public class OrbitSimulator : MonoBehaviour
     public GameObject[] planetZoomLocations;
     public GameObject[] scaledPlanetZoomLocations;
     public GameObject mainTeleporter;
+    public int currOrbit;
 
     [Header("Orbit Anchor")]
     public Transform orbitAnchor;
@@ -465,6 +466,7 @@ public class OrbitSimulator : MonoBehaviour
             }
             planetZoomLocations[value].SetActive(true);
         }
+        currOrbit = value;
     }
 
     public void SetOrbitCircleVisualFromCheck()

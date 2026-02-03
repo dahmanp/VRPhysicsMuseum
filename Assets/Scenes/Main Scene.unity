@@ -16748,6 +16748,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1657152130}
     m_Modifications:
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: zoomTeleport
+      value: 
+      objectReference: {fileID: 2057982937}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2090678939}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: platformTeleport
       value: 1
       objectReference: {fileID: 0}
@@ -19422,6 +19430,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 279889330}
     m_Modifications:
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: zoomTeleport
+      value: 
+      objectReference: {fileID: 2057982937}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2090678939}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: zoomTeleportObj
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_TeleportAnchorTransform
       value: 
@@ -23286,6 +23310,7 @@ MonoBehaviour:
   - {fileID: 1632703646}
   - {fileID: 1632703646}
   mainTeleporter: {fileID: 2057982937}
+  currOrbit: 0
   orbitAnchor: {fileID: 999366166}
   startYear: 2025
   startMonth: 12
@@ -43112,6 +43137,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083845313}
   m_CullTransparentMesh: 1
+--- !u!1 &2090678939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 1157300733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2100911093
 GameObject:
   m_ObjectHideFlags: 0

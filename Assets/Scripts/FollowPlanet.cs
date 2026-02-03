@@ -50,7 +50,8 @@ public class FollowPlanet : MonoBehaviour
         initialRotation = transform.rotation;
     }
 
-    void LateUpdate()
+    //void LateUpdate()
+    void Update()
     {
 
         Vector3 desiredDirection = (sun.position - planet.position).normalized; //Direction from Planet to Sun

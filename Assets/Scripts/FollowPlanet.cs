@@ -1,36 +1,3 @@
-/*****************
-A couple notes:
-I couldn't just parent the platform to the planet because it would
-also follow the rotation and would make it super buggy because of how 
-often it was being updated.
-
-Here are two options:
-Simple- Just put in the planet as a target and the platform will 
-follow the planet at a specified offset. The issue is that sometimes 
-the planetvwould block the view of the sun.
-
-Advanved- Tries to always have the platform in between the planet
-and the sun, but is a lot more complicated and might get weird
-with multiple platforms.
-
-Can see the difference best when time scale 1 day = 1 week
-*****************/
-
-/*
-using UnityEngine;
-
-public class FollowPlanet : MonoBehaviour
-{
-    public Transform target; //Planet
-    public Vector3 offset;
-
-    void LateUpdate()
-    {
-        transform.position = target.position + offset;
-    }
-}
-*/
-
 using UnityEngine;
 public class FollowPlanet : MonoBehaviour
 {
@@ -64,6 +31,19 @@ public class FollowPlanet : MonoBehaviour
 
         transform.position = planet.position + smoothedDirection * distanceFromPlanet;
 
-        transform.rotation = initialRotation; //keeps level
+        //Always face the sun, but stays flat
+        Vector3 flatLookDir = sun.position - transform.position; //Only y rotation, desired direction var is all 3
+        flatLookDir.y = 0f; //keep level 
+
+        if (flatLookDir.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(flatLookDir.normalized, Vector3.up);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                Time.deltaTime * 2
+            );
+        }
     }
 }

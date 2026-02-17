@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class FoucaultPendulum : MonoBehaviour
 {
@@ -22,11 +23,13 @@ public class FoucaultPendulum : MonoBehaviour
     [Range(-90f, 90f)]
     public float latitude = 90f;
 
-    public float precessionScale = 1000f;
+    public float precessionScale = 100f;
 
     [Header("UI")]
     public TMP_Text latitudeLabel;
     public Slider latitudeSlider;
+    public TMP_Dropdown timeScaleDropdown;
+    float timeMultiplier = 1f;
 
     float theta0;
     float wEarth;
@@ -52,11 +55,17 @@ public class FoucaultPendulum : MonoBehaviour
         }
 
         UpdateLatitudeLabel();
+
+        if (timeScaleDropdown != null)
+        {
+            timeScaleDropdown.value = 0;
+            timeScaleDropdown.onValueChanged.AddListener(UpdateTimeScale);
+        }
     }
 
     void Update()
     {
-        time += Time.deltaTime;
+        time += Time.deltaTime * timeMultiplier;
 
         float phi = w * time;
         float theta = theta0 * Mathf.Cos(Mathf.Sqrt(gravity / length) * time);
@@ -82,8 +91,8 @@ public class FoucaultPendulum : MonoBehaviour
 
     void RecalculateAngularVelocity()
     {
-        w = wEarth * Mathf.Sin(latitude * Mathf.Deg2Rad) * precessionScale;
-        Debug.Log(w);
+        w = wEarth * Mathf.Sin(latitude * Mathf.Deg2Rad);
+        Debug.Log($"Latitude: {latitude}  w: {w}");
     }
 
     public void ResetSimulation()
@@ -110,5 +119,27 @@ public class FoucaultPendulum : MonoBehaviour
     void UpdateLatitudeLabel()
     {
         latitudeLabel.text = $"{latitude:F1}°";
+    }
+
+    public void UpdateTimeScale(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                timeMultiplier = 1f;
+                break;
+
+            case 1:
+                timeMultiplier = 60f;
+                break;
+
+            case 2:
+                timeMultiplier = 3600f;
+                break;
+
+            case 3:
+                timeMultiplier = 86400f;
+                break;
+        }
     }
 }

@@ -94,6 +94,9 @@ public class OrbitSimulator : MonoBehaviour
     public TMP_Dropdown zoomDropdown;
     public GameObject CoordinateFrameObject;
 
+    private bool usePrebakedOrbits = false;
+
+
     // UNITY
 
     void Start()
@@ -154,6 +157,29 @@ public class OrbitSimulator : MonoBehaviour
         scaledPlanetsParent.SetActive(scaled);
         planetsParent.SetActive(!scaled);
 
+        // Orbit line stuff
+        TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
+
+        if (usePrebakedOrbits)
+        {
+            foreach (var t in trails)
+            {
+                t.emitting = false; // get rid of live line
+                t.enabled = true; // show pre-baked line
+            }
+        }
+        else
+        {
+            // Live trail update
+            foreach (var t in trails)
+            {
+                t.emitting = true;
+                t.enabled = true;
+            }
+        }
+
+        UpdateOrbitTrails();
+
         foreach (var planet in activePlanets)
         {
             if (planet.body == null)
@@ -166,7 +192,7 @@ public class OrbitSimulator : MonoBehaviour
         }
     }
 
-    // TIME SCALE
+    // TIME SCALE and prebaked orbits if neccessary
 
     double GetTimeScaleSeconds()
     {
@@ -174,6 +200,25 @@ public class OrbitSimulator : MonoBehaviour
         const double minute = 60.0;
         const double hour = 3600.0;
         const double day = 86400.0;
+
+        // Decide if we need prebaked orbits
+        switch (timeSpeed)
+        {
+            case TimeSpeed.OneSecondPerSecond:
+            case TimeSpeed.OneMinutePerSecond:
+            case TimeSpeed.OneHourPerSecond:
+            case TimeSpeed.OneMonthPerSecond:
+            case TimeSpeed.OneYearPerSecond:
+            case TimeSpeed.OneDecadePerSecond:
+                usePrebakedOrbits = true;
+                break;
+
+            case TimeSpeed.OneDayPerSecond:
+            case TimeSpeed.OneWeekPerSecond:
+            default:
+                usePrebakedOrbits = false;
+                break;
+        }
 
         switch (timeSpeed)
         {
@@ -188,6 +233,7 @@ public class OrbitSimulator : MonoBehaviour
             default: return day;
         }
     }
+
 
     // AXIAL ROTATION
 
@@ -482,6 +528,17 @@ public class OrbitSimulator : MonoBehaviour
         setOrbitState(orbitVisualToggle.isOn);
         Debug.Log("Set Orbit Visual From Check"); //Toggle
     }
+
+    void UpdateOrbitTrails()
+    {
+        TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
+        foreach (var t in trails)
+        {
+            t.enabled = true;         // always visible
+            t.emitting = !usePrebakedOrbits; // live trails only if not prebaked
+        }
+    }
+
 
     public void SetCoordinateFrameVisualFromCheck()
     {

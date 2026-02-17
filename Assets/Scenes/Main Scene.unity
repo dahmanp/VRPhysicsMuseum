@@ -20600,7 +20600,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &928142639
 GameObject:
   m_ObjectHideFlags: 0
@@ -22081,7 +22081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_LocalScale.y
@@ -27188,7 +27188,7 @@ MonoBehaviour:
   startYear: 2025
   startMonth: 12
   startDay: 22
-  playSimulation: 0
+  playSimulation: 1
   timeSpeed: 3
   orbitTrails:
   - {fileID: 690126253}
@@ -27208,7 +27208,7 @@ MonoBehaviour:
   - {fileID: 1574420339}
   - {fileID: 1618385280}
   - {fileID: 759537286}
-  coordinateFrame: 0
+  coordinateFrame: 1
   distanceScale: 0.00000001
   timeDropdown: {fileID: 992904219}
   scaleToggle: {fileID: 899326559}
@@ -46103,6 +46103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XYZ Axis
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c9ca743e575b7b45a9a5bcfa30f9d65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -49053,6 +49057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab3a43057ec44f48a15ad62c3658c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platform: {fileID: 1660910397}
 --- !u!1 &2098285861
 GameObject:
   m_ObjectHideFlags: 0

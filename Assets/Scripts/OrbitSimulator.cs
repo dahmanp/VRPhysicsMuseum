@@ -96,7 +96,6 @@ public class OrbitSimulator : MonoBehaviour
 
     private bool usePrebakedOrbits = false;
 
-
     // UNITY
 
     void Start()
@@ -105,41 +104,8 @@ public class OrbitSimulator : MonoBehaviour
         ResetSimulation();
         InitializeAxialTilts(planets);
         InitializeAxialTilts(scaledPlanets);
+
         setOrbitState(false);
-    }
-
-    void setOrbitState(bool on)
-    {
-        TrailRenderer[] orbitTrail = scaled ? scaledOrbitTrails : orbitTrails;
-        foreach(TrailRenderer orbit in orbitTrail)
-        {
-            //Debug.Log("test2");
-            if (on)
-            {
-                orbit.enabled = true;
-                //Debug.Log("test");
-            } else
-            {
-                orbit.enabled = false;
-                orbit.Clear();
-            }
-        }
-
-        TrailRenderer[] orbitTrail2 = !scaled ? scaledOrbitTrails : orbitTrails;
-        foreach (TrailRenderer orbit in orbitTrail2)
-        {
-            //Debug.Log("test2");
-            if (on)
-            {
-                orbit.enabled = true;
-                //Debug.Log("test");
-            }
-            else
-            {
-                orbit.enabled = false;
-                orbit.Clear();
-            }
-        }
     }
 
     void Update()
@@ -192,8 +158,43 @@ public class OrbitSimulator : MonoBehaviour
         }
     }
 
-    // TIME SCALE and prebaked orbits if neccessary
+    // LINE RENDER STUFF
+    void setOrbitState(bool on)
+    {
+        TrailRenderer[] orbitTrail = scaled ? scaledOrbitTrails : orbitTrails;
+        foreach (TrailRenderer orbit in orbitTrail)
+        {
+            //Debug.Log("test2");
+            if (on)
+            {
+                orbit.enabled = true;
+                //Debug.Log("test");
+            }
+            else
+            {
+                orbit.enabled = false;
+                orbit.Clear();
+            }
+        }
 
+        TrailRenderer[] orbitTrail2 = !scaled ? scaledOrbitTrails : orbitTrails;
+        foreach (TrailRenderer orbit in orbitTrail2)
+        {
+            //Debug.Log("test2");
+            if (on)
+            {
+                orbit.enabled = true;
+                //Debug.Log("test");
+            }
+            else
+            {
+                orbit.enabled = false;
+                orbit.Clear();
+            }
+        }
+    }
+
+    // TIME SCALE
     double GetTimeScaleSeconds()
     {
         const double second = 1.0;
@@ -267,7 +268,7 @@ public class OrbitSimulator : MonoBehaviour
 
     // ORBIT CALCULATION 
 
-    Vector3 ComputeOrbitPosition(Planet p, double t)
+    public Vector3 ComputeOrbitPosition(Planet p, double t)
     {
         double n = System.Math.Sqrt(mu / (p.a * p.a * p.a));
         double M = p.Mo + n * t;
@@ -359,6 +360,12 @@ public class OrbitSimulator : MonoBehaviour
             t.emitting = true; //Resume
     }
 
+    /*IEnumerator ResetLines() //test
+    {
+        yield return null;
+        yield return null;
+    }*/
+
 
     // UI
 
@@ -379,7 +386,8 @@ public class OrbitSimulator : MonoBehaviour
 
     public void SetPlayingFromCheck(bool platform)
     {
-        if (playSimulation) {
+        if (playSimulation)
+        {
             playSimulation = false;
             if (platform)
             {
@@ -497,15 +505,17 @@ public class OrbitSimulator : MonoBehaviour
 
     void SetZoomActive(int value)
     {
-        if (scaled) {
+        if (scaled)
+        {
             //Changed "planetLocation" to "platform"
             foreach (GameObject platform in scaledPlanetZoomLocations)
             {
                 platform.SetActive(false);
             }
             scaledPlanetZoomLocations[value].SetActive(true);
-        } else
-        {  
+        }
+        else
+        {
             foreach (GameObject platform in planetZoomLocations)
             {
                 platform.SetActive(false);
@@ -514,31 +524,6 @@ public class OrbitSimulator : MonoBehaviour
         }
         currOrbit = value;
     }
-
-    public void SetOrbitCircleVisualFromCheck()
-    {
-        /*if (orbitVisual)
-        {
-            orbitVisual = false;
-        }
-        else
-        {
-            orbitVisual = true;
-        }*/
-        setOrbitState(orbitVisualToggle.isOn);
-        Debug.Log("Set Orbit Visual From Check"); //Toggle
-    }
-
-    void UpdateOrbitTrails()
-    {
-        TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
-        foreach (var t in trails)
-        {
-            t.enabled = true;         // always visible
-            t.emitting = !usePrebakedOrbits; // live trails only if not prebaked
-        }
-    }
-
 
     public void SetCoordinateFrameVisualFromCheck()
     {
@@ -551,6 +536,16 @@ public class OrbitSimulator : MonoBehaviour
         {
             coordinateFrame = true;
             CoordinateFrameObject.SetActive(true);
+        }
+    }
+    
+    void UpdateOrbitTrails()
+    {
+        TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
+        foreach (var t in trails)
+        {
+            t.enabled = true;         // always visible
+            t.emitting = !usePrebakedOrbits; // live trails only if not prebaked
         }
     }
 }

@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
+using System.Collections;
 
 public class FoucaultPendulum : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class FoucaultPendulum : MonoBehaviour
     public Transform bob;
     public Transform rod;
     float rodThickness = 0.05f;
+    public GameObject lineRenderer;
 
     [Range(0f, 45f)]
     float initialAngleDegrees = 10f;
@@ -32,6 +34,7 @@ public class FoucaultPendulum : MonoBehaviour
     public Slider latitudeSlider;
     public TMP_Dropdown timeScaleDropdown;
     float timeMultiplier = 1f;
+    public Toggle lineRendererToggle;
 
     float theta0;
     float wEarth;
@@ -68,6 +71,14 @@ public class FoucaultPendulum : MonoBehaviour
         {
             timeScaleDropdown.value = 0;
             timeScaleDropdown.onValueChanged.AddListener(UpdateTimeScale);
+        }
+
+        //-----------------NOTE TO FUTURE DEVS-----------------
+        //Sets the toggle and line renderer "IsActive" value to true to start. Same reasoning as the slider and dropdown above.
+        if (lineRendererToggle != null)
+        {
+            lineRendererToggle.isOn = true;
+            lineRendererToggle.onValueChanged.AddListener(EnableLineRenderer);
         }
     }
 
@@ -154,6 +165,19 @@ public class FoucaultPendulum : MonoBehaviour
         //-----------------NOTE TO FUTURE DEVS-----------------
         //Formats the latitude label properly such that it reads "Latitude: [value]°". It looks nicer for the viewer and reinforces the value type.
         latitudeLabel.text = $"{latitude:F1}°";
+    }
+
+    void EnableLineRenderer(bool toggle)
+    {
+        //-----------------NOTE TO FUTURE DEVS-----------------
+        //If the player doesn't want to see the line, this is how it'll change.
+        if (toggle == true)
+        {
+            lineRenderer.SetActive(true);
+            Debug.Log("test");
+        }
+        else
+            lineRenderer.SetActive(false);
     }
 
     public void UpdateTimeScale(int index)

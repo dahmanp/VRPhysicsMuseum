@@ -136,10 +136,6 @@ public class FoucaultPendulum : MonoBehaviour
             case 2:
                 timeMultiplier = 3600f;
                 break;
-
-            case 3:
-                timeMultiplier = 86400f;
-                break;
         }
     }
 }

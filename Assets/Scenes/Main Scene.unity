@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6d47a6c5ccdc9804d9fd8ff93e539056, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -16915,10 +16915,10 @@ MonoBehaviour:
     - m_Text: Saturn
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Neptune
+    - m_Text: Uranus
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Uranus
+    - m_Text: Neptune
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -37336,7 +37336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: More experiments coming soon!
+  m_text: More exhibits coming soon!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -55867,19 +55867,18 @@ MonoBehaviour:
     This is made possible by Earth being an ocean world, the only one in the Solar
     System sustaining liquid surface water. Almost all of Earth's water is contained
     in its global ocean, covering 70.8% of Earth's crust. The remaining 29.2% of
-    Earth's crust is land, most of which is located in the form of continental landmasses
-    within Earth's land hemisphere. Most of Earth's land is at least somewhat humid
-    and covered by vegetation, while large ice sheets at Earth's polar deserts retain
-    more water than Earth's groundwater, lakes, rivers, and atmospheric water combined.
-    Earth's crust consists of slowly moving tectonic plates, which interact to produce
-    mountain ranges, volcanoes, and earthquakes. Earth has a liquid outer core that
-    generates a magnetosphere capable of deflecting most of the destructive solar
-    winds and cosmic radiation.\n\nEarth has a dynamic atmosphere, which sustains
-    Earth's surface conditions and protects it from most meteoroids and UV-light
-    at entry. It is composed primarily of nitrogen and oxygen. Water vapor is widely
-    present in the atmosphere, forming clouds that cover most of the planet. The
-    water vapor acts as a greenhouse gas and, together with other greenhouse gases
-    in the atmosphere, particularly carbon dioxide (CO2), creates the conditions
+    Earth's crust is land, most of which is located in the form of continental landmasses.
+    Most of Earth's land is at least somewhat humid and covered by vegetation, while
+    large ice sheets at Earth's polar deserts retain more water than Earth's groundwater,
+    lakes, rivers, and atmospheric water combined. Earth's crust consists of slowly
+    moving tectonic plates, which interact to produce mountain ranges, volcanoes,
+    and earthquakes. Earth has a liquid outer core that generates a magnetosphere
+    capable of deflecting most of the destructive solar winds and cosmic radiation.\n\nEarth
+    has a dynamic atmosphere, which sustains Earth's surface conditions and protects
+    it from most meteoroids and UV-light at entry. It is composed primarily of nitrogen
+    and oxygen. Water vapor is widely present in the atmosphere, forming clouds.
+    The water vapor acts as a greenhouse gas and, together with other greenhouse
+    gases in the atmosphere, particularly carbon dioxide (CO2), creates the conditions
     for both liquid surface water and water vapor to persist via the capturing of
     energy from the Sun's light. This process maintains the current average surface
     temperature of 14.76 \xB0C (58.57 \xB0F), at which water is liquid under normal
@@ -55890,27 +55889,20 @@ MonoBehaviour:
     allowing components such as carbon and nitrogen to cycle.\n\nEarth is rounded
     into an ellipsoid with a circumference of about 40,000 kilometers (24,900 miles).
     It is the densest planet in the Solar System. Of the four rocky planets, it is
-    the largest and most massive. Earth is about eight light-minutes (1 AU) away
-    from the Sun and orbits it, taking a year (about 365.25 days) to complete one
-    revolution. Earth rotates around its own axis in slightly less than a day (in
-    about 23 hours and 56 minutes). Earth's axis of rotation is tilted with respect
-    to the perpendicular to its orbital plane around the Sun, producing seasons.
-    Earth is orbited by one permanent natural satellite, the Moon, which orbits Earth
-    at 384,400 km (238,855 mi)\u20141.28 light seconds\u2014and is roughly a quarter
-    as wide as Earth. The Moon's gravity helps stabilize Earth's axis, causes tides
-    and gradually slows Earth's rotation. Likewise, Earth's gravitational pull has
-    already made the Moon's rotation tidally locked, keeping the same near side facing
-    Earth.\r\n\r\nEarth, like most other bodies in the Solar System, formed about
-    4.5 billion years ago from gas and dust in the early Solar System. The formation
-    of the ocean and the subsequent development of life occurred during the first
-    billion years of Earth's History. Life spread globally and has been altering
-    Earth's atmosphere and surface, leading to the Great Oxidation Event two billion
-    years ago. Humans emerged 300,000 years ago in Africa and have spread across
-    every continent on Earth. Humans depend on Earth's biosphere and natural resources
-    for their survival, but have increasingly impacted the planet's environment.
-    Humanity's current impact on Earth's climate and biosphere is unsustainable,
-    threatening the livelihood of humans and many other forms of life, and causing
-    widespread extinctions."
+    the largest and most massive. Earth is about 150,000,000 km (93,000,000  miles)
+    (also known as 1 Astronomical Unit or AU) away from the Sun and orbits it, taking
+    a year (about 365.25 days) to complete one revolution. Earth rotates around its
+    own axis in slightly less than a day, in about 23 hours and 56 minutes 4.2 seconds,
+    known as a Sidereal Day. During this time, the Earth has moved approximately
+    1\xB0 relative to the sun so the Earth must rotated approximately 1\xB0 more
+    such that the Earth has the same relative oritentation to the sun. This occurs
+    every 24 hours and is called a Solar Day. Earth's axis of rotation is tilted
+    with respect to the perpendicular to its orbital plane around the Sun, producing
+    seasons. Earth is orbited by one permanent natural satellite, the Moon, which
+    orbits Earth at 384,400 km (238,855 mi) and is roughly a quarter as wide as Earth.
+    The Moon's gravity helps stabilize Earth's axis, causes tides and gradually slows
+    Earth's rotation. Likewise, Earth's gravitational pull has already made the Moon's
+    rotation tidally locked, keeping the same side of the Moon facing Earth.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

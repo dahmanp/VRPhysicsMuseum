@@ -45,6 +45,17 @@ public class OrbitSimulator : MonoBehaviour
     [Header("Orbit Anchor")]
     public Transform orbitAnchor;
 
+    [Header("Coordinate Frames")]
+    public GameObject earthFrame;
+    public GameObject scaledEarthFrame;
+    // Sun
+    public GameObject sunFrame;
+    public GameObject scaledSunFrame;
+    //also uses scaled bool
+    public bool showEarthFrame;
+    public bool showSunFrame;
+
+
     [Header("Simulation Start Date")]
     public int startYear = 2004;
     public int startMonth = 4;
@@ -68,7 +79,7 @@ public class OrbitSimulator : MonoBehaviour
     //public bool orbitVisual = false;
     public TrailRenderer[] orbitTrails;
     public TrailRenderer[] scaledOrbitTrails;
-    public bool coordinateFrame = false;
+    //public bool coordinateFrame = false;
 
     [Header("Unity Scaling")]
     public float distanceScale = 1f / 1e8f;
@@ -81,10 +92,11 @@ public class OrbitSimulator : MonoBehaviour
     [Header("UI")]
     public TMP_Dropdown timeDropdown;
     public Toggle scaleToggle;
+    public Toggle earthToggle; //coordinate frame
+    public Toggle sunToggle; //coordinate frame
     public Toggle playingToggle;
-    //public Toggle zoomToggle;
-    public Toggle coordinateFrameToggle;
     public Toggle orbitVisualToggle;
+
     public Slider monthSlider;
     public Slider daySlider;
     public Slider yearSlider;
@@ -92,7 +104,7 @@ public class OrbitSimulator : MonoBehaviour
     public TMP_Text dayLabel;
     public TMP_Text yearLabel;
     public TMP_Dropdown zoomDropdown;
-    public GameObject CoordinateFrameObject;
+    //public GameObject CoordinateFrameObject;
 
     private bool usePrebakedOrbits = false;
 
@@ -106,6 +118,8 @@ public class OrbitSimulator : MonoBehaviour
         InitializeAxialTilts(scaledPlanets);
 
         setOrbitState(false);
+
+        UpdateCoordinateFrames();
     }
 
     void Update()
@@ -143,8 +157,6 @@ public class OrbitSimulator : MonoBehaviour
                 t.enabled = true;
             }
         }
-
-        UpdateOrbitTrails();
 
         foreach (var planet in activePlanets)
         {
@@ -371,18 +383,10 @@ public class OrbitSimulator : MonoBehaviour
 
     public void SetScaleFromCheck()
     {
-        if (scaled)
-        {
-            scaled = false;
-            StartCoroutine(ResetLines());
-        }
-        else
-        {
-            scaled = true;
-            StartCoroutine(ResetLines());
-
-        }
+        scaled = !scaled;
+        UpdateCoordinateFrames();
     }
+
 
     public void SetPlayingFromCheck(bool platform)
     {
@@ -493,14 +497,11 @@ public class OrbitSimulator : MonoBehaviour
         SetPlayingFromCheck(true);
 
         //reset scaled
-        scaleToggle.isOn = false;
-        scaled = false;
+        //scaleToggle.isOn = false;
+        //scaled = false;
         //SetScaleFromCheck();
 
         mainTeleporter.SetActive(true);
-
-        //teleport user to zoom location
-        // TELEPORT PLAYER TO planetZoomLocation[value];
     }
 
     void SetZoomActive(int value)
@@ -525,20 +526,32 @@ public class OrbitSimulator : MonoBehaviour
         currOrbit = value;
     }
 
-    public void SetCoordinateFrameVisualFromCheck()
+    private void UpdateCoordinateFrames()
     {
-        if (coordinateFrame)
-        {
-            coordinateFrame = false;
-            CoordinateFrameObject.SetActive(false);
-        }
-        else
-        {
-            coordinateFrame = true;
-            CoordinateFrameObject.SetActive(true);
-        }
+        // EARTH FRAME
+        bool earthShouldShow = showEarthFrame;
+        earthFrame.SetActive(earthShouldShow && !scaled);
+        scaledEarthFrame.SetActive(earthShouldShow && scaled);
+
+        // SUN FRAME
+        bool sunShouldShow = showSunFrame;
+        sunFrame.SetActive(sunShouldShow && !scaled);
+        scaledSunFrame.SetActive(sunShouldShow && scaled);
+    }
+
+    public void OnEarthToggleChanged(bool value)
+    {
+        showEarthFrame = value;
+        UpdateCoordinateFrames();
+    }
+
+    public void OnSunToggleChanged(bool value)
+    {
+        showSunFrame = value;
+        UpdateCoordinateFrames();
     }
     
+    /*
     void UpdateOrbitTrails()
     {
         TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
@@ -547,5 +560,5 @@ public class OrbitSimulator : MonoBehaviour
             t.enabled = true;         // always visible
             t.emitting = !usePrebakedOrbits; // live trails only if not prebaked
         }
-    }
+    }*/
 }

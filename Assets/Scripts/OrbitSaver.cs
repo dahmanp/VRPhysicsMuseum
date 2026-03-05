@@ -1,3 +1,15 @@
+/* Will clean up and explain according to guidelines later...
+
+Add this script to any TRAIL RENDERER (make sure NOT line render component)
+assign itself in the inspector, name it something, then when the render is 
+where you want it, press O key. It will save the positions in a scriptable
+object (this is what OrbitData script is). Then, to display, make a game
+object with a LINE renderer attached and put orbit loader on the game object
+and populate the orbit data object and LINE renderer in the inspector. You
+may have to mess with material and width.
+
+*/
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 #if UNITY_EDITOR

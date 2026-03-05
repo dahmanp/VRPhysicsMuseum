@@ -10448,7 +10448,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5405603697714027012, guid: 83a70519441b11449a59240d6f7d8ece, type: 3}
       insertIndex: -1
       addedObject: {fileID: 712007803}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4634027273768927422, guid: 83a70519441b11449a59240d6f7d8ece, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 389387465}
   m_SourcePrefab: {fileID: 100100000, guid: 83a70519441b11449a59240d6f7d8ece, type: 3}
 --- !u!4 &389387463 stripped
 Transform:
@@ -10460,6 +10463,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4634027273768927422, guid: 83a70519441b11449a59240d6f7d8ece, type: 3}
   m_PrefabInstance: {fileID: 389387462}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &389387465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389387464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdaa444583e0a64e9df5b1f359f40a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 712007805}
+  meshName: EarthOrbitMesh(SCALED)
 --- !u!1 &398712636
 GameObject:
   m_ObjectHideFlags: 0
@@ -10584,8 +10601,9 @@ GameObject:
   - component: {fileID: 403324387}
   - component: {fileID: 403324389}
   - component: {fileID: 403324388}
+  - component: {fileID: 403324390}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: VenusLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10820,6 +10838,20 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &403324390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403324386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7447049c6fa094eb2ae3fbb7a360e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trail: {fileID: 403324388}
+  assetName: OrbitDataNEW
 --- !u!1001 &407325604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12347,7 +12379,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1422868518}
+    m_TransformParent: {fileID: 1160315799}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_LocalScale.x
@@ -15045,7 +15077,7 @@ GameObject:
   - component: {fileID: 567100157}
   - component: {fileID: 567100158}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: JupiterLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18328,7 +18360,7 @@ GameObject:
   - component: {fileID: 690126252}
   - component: {fileID: 690126253}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: VenusLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18936,7 +18968,7 @@ GameObject:
   - component: {fileID: 712007805}
   - component: {fileID: 712007804}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: EarthLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19072,7 +19104,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712007802}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19088,7 +19120,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9507b1f1562402549868e4f043e8dff7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20425,7 +20457,7 @@ GameObject:
   - component: {fileID: 759537287}
   - component: {fileID: 759537286}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: MarsLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26857,7 +26889,7 @@ GameObject:
   - component: {fileID: 963818050}
   - component: {fileID: 963818051}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: NeptuneLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27380,7 +27412,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1422868518}
+    m_TransformParent: {fileID: 1160315799}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_LocalScale.x
@@ -32880,6 +32912,41 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7917674758326848207, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
   m_PrefabInstance: {fileID: 1157300733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1160315798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160315799}
+  m_Layer: 0
+  m_Name: Coordinate Frames
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160315799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160315798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2050287262}
+  - {fileID: 462717448}
+  - {fileID: 1863258185}
+  - {fileID: 1562016513}
+  m_Father: {fileID: 1422868518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169487548
 GameObject:
   m_ObjectHideFlags: 0
@@ -33293,7 +33360,7 @@ MonoBehaviour:
   startYear: 2025
   startMonth: 9
   startDay: 21
-  playSimulation: 0
+  playSimulation: 1
   timeSpeed: 3
   orbitTrails: []
   scaledOrbitTrails: []
@@ -36317,7 +36384,7 @@ GameObject:
   - component: {fileID: 1290006636}
   - component: {fileID: 1290006635}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: UranusLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36931,7 +36998,7 @@ GameObject:
   - component: {fileID: 1297344252}
   - component: {fileID: 1297344251}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: SaturnLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39076,7 +39143,7 @@ GameObject:
   - component: {fileID: 1362209633}
   - component: {fileID: 1362209634}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: UranusLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40367,37 +40434,6 @@ LightProbeGroup:
   - {x: -2.4144797, y: 0.13248897, z: 2.767537}
   - {x: -2.4144797, y: 0.13248897, z: -1}
   m_Dering: 1
---- !u!1 &1408466397
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1408466398}
-  m_Layer: 0
-  m_Name: OrbitBaker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1408466398
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408466397}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2045478830}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1418228443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40454,10 +40490,8 @@ Transform:
   - {fileID: 1849975071}
   - {fileID: 729461651}
   - {fileID: 494034645}
-  - {fileID: 2050287262}
-  - {fileID: 462717448}
-  - {fileID: 1863258185}
-  - {fileID: 1562016513}
+  - {fileID: 1160315799}
+  - {fileID: 1474906869}
   m_Father: {fileID: 2045478830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425685075
@@ -41649,7 +41683,7 @@ GameObject:
   - component: {fileID: 1472884910}
   - component: {fileID: 1472884912}
   m_Layer: 0
-  m_Name: OrbitLineRenderer
+  m_Name: EarthLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41913,6 +41947,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473011072}
   m_CullTransparentMesh: 1
+--- !u!1 &1474906868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1474906869}
+  - component: {fileID: 1474906871}
+  - component: {fileID: 1474906870}
+  - component: {fileID: 1474906872}
+  m_Layer: 0
+  m_Name: BakedOrbit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1474906869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474906868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.472, z: 1.304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1422868518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1474906870
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474906868}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9507b1f1562402549868e4f043e8dff7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1474906871
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474906868}
+  m_Mesh: {fileID: 4300000, guid: 666d6b7889fab374ea42d4557b29fbf2, type: 2}
+--- !u!114 &1474906872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474906868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7447049c6fa094eb2ae3fbb7a360e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trail: {fileID: 0}
+  assetName: VenusOrbitData
 --- !u!1 &1482174432
 GameObject:
   m_ObjectHideFlags: 0
@@ -42706,6 +42841,53 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7593466767680074145, guid: 1204715b99e52a143b812aba9e6cdd6a, type: 3}
   m_PrefabInstance: {fileID: 1531242073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1531926965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531926967}
+  - component: {fileID: 1531926966}
+  m_Layer: 0
+  m_Name: NewOrbit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1531926966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531926965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9ba7ddc14086d47b91de40d286efe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitData: {fileID: 11400000, guid: 6a748fea2837cba4491a43ced68d1d42, type: 2}
+  lineRenderer: {fileID: 1979663148}
+--- !u!4 &1531926967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531926965}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.1939898, y: 4.9692793, z: -0.03571701}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1979663149}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531999723
 GameObject:
   m_ObjectHideFlags: 0
@@ -43905,7 +44087,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1422868518}
+    m_TransformParent: {fileID: 1160315799}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_LocalScale.x
@@ -43917,7 +44099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.120000005
+      value: 0.12000001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44205,7 +44387,7 @@ GameObject:
   - component: {fileID: 1574420340}
   - component: {fileID: 1574420339}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: NeptuneLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45825,7 +46007,7 @@ GameObject:
   - component: {fileID: 1618385281}
   - component: {fileID: 1618385280}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: MercuryLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46910,7 +47092,7 @@ GameObject:
   - component: {fileID: 1655900580}
   - component: {fileID: 1655900581}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: MercuryLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48583,7 +48765,7 @@ GameObject:
   - component: {fileID: 1707369637}
   - component: {fileID: 1707369638}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: MarsLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51605,7 +51787,7 @@ GameObject:
   - component: {fileID: 1820156335}
   - component: {fileID: 1820156336}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: SaturnLineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52800,7 +52982,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1849766685
 GameObject:
   m_ObjectHideFlags: 0
@@ -56355,6 +56537,145 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c9ca743e575b7b45a9a5bcfa30f9d65, type: 3}
   m_PrefabInstance: {fileID: 1978372778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1979663147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979663149}
+  - component: {fileID: 1979663148}
+  m_Layer: 0
+  m_Name: LineRenderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!120 &1979663148
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979663147}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9507b1f1562402549868e4f043e8dff7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.05948639
+        value: 0.05883026
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 1
+--- !u!4 &1979663149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979663147}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1531926967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1982455465
 GameObject:
   m_ObjectHideFlags: 0
@@ -56808,7 +57129,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1422868518}
+    m_TransformParent: {fileID: 1160315799}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 04c8ca31af2993a449259cadeec5d02a, type: 3}
       propertyPath: m_LocalScale.x
@@ -57134,7 +57455,7 @@ GameObject:
   - component: {fileID: 2017867176}
   - component: {fileID: 2017867175}
   m_Layer: 0
-  m_Name: OrbitLineRenderer (1)
+  m_Name: JupiterLineRenderer (SCALED)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58729,7 +59050,6 @@ Transform:
   m_Children:
   - {fileID: 1982455466}
   - {fileID: 1422868518}
-  - {fileID: 1408466398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045646948
@@ -61006,3 +61326,4 @@ SceneRoots:
   - {fileID: 279889330}
   - {fileID: 317152809}
   - {fileID: 1844379973}
+  - {fileID: 1531926967}

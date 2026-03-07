@@ -36,6 +36,7 @@ public class OrbitSimulator : MonoBehaviour
     public GameObject scaledPlanetsParent;
     public bool scaled;
 
+    //Check if needed
     [Header("Planet Zoom Locations")]
     public GameObject[] planetZoomLocations;
     public GameObject[] scaledPlanetZoomLocations;
@@ -54,6 +55,15 @@ public class OrbitSimulator : MonoBehaviour
     //also uses scaled bool
     public bool showEarthFrame;
     public bool showSunFrame;
+
+    [Header("Orbit Lines")]
+    public bool orbitLinesVisible = true;  
+    public bool useLiveTrails = true;  
+    public bool useBakedTrails = false;
+    public TrailRenderer[] orbitTrails;
+    public TrailRenderer[] scaledOrbitTrails;
+    public GameObject bakedOrbitParent;
+    public GameObject scaledBakedOrbitParent;
 
 
     [Header("Simulation Start Date")]
@@ -76,10 +86,6 @@ public class OrbitSimulator : MonoBehaviour
     [Header("Playback")]
     public bool playSimulation = true;
     public TimeSpeed timeSpeed = TimeSpeed.OneDayPerSecond;
-    //public bool orbitVisual = false;
-    public TrailRenderer[] orbitTrails;
-    public TrailRenderer[] scaledOrbitTrails;
-    //public bool coordinateFrame = false;
 
     [Header("Unity Scaling")]
     public float distanceScale = 1f / 1e8f;
@@ -92,10 +98,10 @@ public class OrbitSimulator : MonoBehaviour
     [Header("UI")]
     public TMP_Dropdown timeDropdown;
     public Toggle scaleToggle;
-    public Toggle earthToggle; //coordinate frame
+    public Toggle earthToggle; //coordinate frame (not sure if needed)
     public Toggle sunToggle; //coordinate frame
     public Toggle playingToggle;
-    public Toggle orbitVisualToggle;
+    //public Toggle orbitVisualToggle;
 
     public Slider monthSlider;
     public Slider daySlider;
@@ -104,20 +110,23 @@ public class OrbitSimulator : MonoBehaviour
     public TMP_Text dayLabel;
     public TMP_Text yearLabel;
     public TMP_Dropdown zoomDropdown;
-    //public GameObject CoordinateFrameObject;
 
-    private bool usePrebakedOrbits = false;
+    //private bool usePrebakedOrbits = false;
 
     // UNITY
 
     void Start()
     {
         epochJD = JulianDate(2004, 4, 7);
+        planetsParent.SetActive(!scaled);
+        scaledPlanetsParent.SetActive(scaled);
+
         ResetSimulation();
         InitializeAxialTilts(planets);
         InitializeAxialTilts(scaledPlanets);
 
         setOrbitState(false);
+        ApplyOrbitState();
 
         UpdateCoordinateFrames();
     }
@@ -134,29 +143,10 @@ public class OrbitSimulator : MonoBehaviour
 
         Planet[] activePlanets = scaled ? scaledPlanets : planets;
 
-        scaledPlanetsParent.SetActive(scaled);
-        planetsParent.SetActive(!scaled);
+        //scaledPlanetsParent.SetActive(scaled);
+        //planetsParent.SetActive(!scaled);
 
-        // Orbit line stuff
-        TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
-
-        if (usePrebakedOrbits)
-        {
-            foreach (var t in trails)
-            {
-                t.emitting = false; // get rid of live line
-                t.enabled = true; // show pre-baked line
-            }
-        }
-        else
-        {
-            // Live trail update
-            foreach (var t in trails)
-            {
-                t.emitting = true;
-                t.enabled = true;
-            }
-        }
+        ApplyOrbitState();
 
         foreach (var planet in activePlanets)
         {
@@ -171,7 +161,7 @@ public class OrbitSimulator : MonoBehaviour
     }
 
     // LINE RENDER STUFF
-    void setOrbitState(bool on)
+    public void setOrbitState(bool on)
     {
         TrailRenderer[] orbitTrail = scaled ? scaledOrbitTrails : orbitTrails;
         foreach (TrailRenderer orbit in orbitTrail)
@@ -213,25 +203,6 @@ public class OrbitSimulator : MonoBehaviour
         const double minute = 60.0;
         const double hour = 3600.0;
         const double day = 86400.0;
-
-        // Decide if we need prebaked orbits
-        switch (timeSpeed)
-        {
-            case TimeSpeed.OneSecondPerSecond:
-            case TimeSpeed.OneMinutePerSecond:
-            case TimeSpeed.OneHourPerSecond:
-            case TimeSpeed.OneMonthPerSecond:
-            case TimeSpeed.OneYearPerSecond:
-            case TimeSpeed.OneDecadePerSecond:
-                usePrebakedOrbits = true;
-                break;
-
-            case TimeSpeed.OneDayPerSecond:
-            case TimeSpeed.OneWeekPerSecond:
-            default:
-                usePrebakedOrbits = false;
-                break;
-        }
 
         switch (timeSpeed)
         {
@@ -347,46 +318,50 @@ public class OrbitSimulator : MonoBehaviour
     {
         double startJD = JulianDate(startYear, startMonth, startDay);
         simulationTimeSeconds = (startJD - epochJD) * 86400.0;
-        StartCoroutine(ResetLines());
+        //StartCoroutine(ResetTrails());
     }
 
-    //Gets rid of tangent lines after reset
-    //Reset moves planets, then this clears it and turns it back on
-    //SHould work with the toggle
-    IEnumerator ResetLines()
+    /*IEnumerator ResetTrails()
     {
-        // Let Update() move planets to the reset position
         yield return null;
 
         TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
 
         foreach (var t in trails)
-            t.emitting = false; //Pause
+        {
+            t.enabled = false;
+            t.emitting = false;
+            t.Clear();
+        }
+
+        yield return null;
 
         foreach (var t in trails)
-            t.Clear(); //Clear
-
-        yield return null; //Wait
-
-        foreach (var t in trails)
-            t.emitting = true; //Resume
+        {
+            if (orbitLinesVisible && useLiveTrails)
+            {
+                t.Clear();
+                t.enabled = true;
+                t.emitting = true;
+            }
+        }
     }
-
-    /*IEnumerator ResetLines() //test
-    {
-        yield return null;
-        yield return null;
-    }*/
-
+*/
 
     // UI
 
-    public void SetScaleFromCheck()
+    /*public void SetScaleFromCheck()
     {
         scaled = !scaled;
-        UpdateCoordinateFrames();
-    }
 
+        planetsParent.SetActive(!scaled);
+        scaledPlanetsParent.SetActive(scaled);
+
+        bakedOrbitParent.SetActive(!scaled);
+        scaledBakedOrbitParent.SetActive(scaled);
+
+        UpdateCoordinateFrames();
+    }*/
 
     public void SetPlayingFromCheck(bool platform)
     {
@@ -397,7 +372,6 @@ public class OrbitSimulator : MonoBehaviour
             {
                 playingToggle.isOn = false;
             }
-            //playingToggle.isOn = false;
         }
         else
         {
@@ -406,7 +380,6 @@ public class OrbitSimulator : MonoBehaviour
             {
                 playingToggle.isOn = true;
             }
-            //playingToggle.isOn = true;
         }
     }
 
@@ -481,8 +454,192 @@ public class OrbitSimulator : MonoBehaviour
         int value = timeDropdown.value;
         timeSpeed = (TimeSpeed)value;
         zoomDropdown.value = value;
+
+        UpdateTrailModeFromTimeSpeed();
+        ApplyOrbitState();
+
+        //StartCoroutine(ResetTrails());
     }
 
+    void UpdateTrailModeFromTimeSpeed()
+    {
+        switch (timeSpeed)
+        {
+            case TimeSpeed.OneDayPerSecond:
+            case TimeSpeed.OneWeekPerSecond:
+                //useLiveTrails = true;
+                //useBakedTrails = false;
+                useLiveTrails = false;
+                useBakedTrails = true;
+                break;
+
+            default:
+                useLiveTrails = false;
+                useBakedTrails = true;
+                break;
+        }
+    }
+
+    /*void ApplyOrbitState()
+    {
+        TrailRenderer[] live = scaled ? scaledOrbitTrails : orbitTrails;
+        TrailRenderer[] inactive = scaled ? orbitTrails : scaledOrbitTrails;
+
+        GameObject bakedParent = scaled ? scaledBakedOrbitParent : bakedOrbitParent;
+
+        // Planets always visible
+        planetsParent.SetActive(!scaled);
+        scaledPlanetsParent.SetActive(scaled);
+
+        // If user turned off orbit lines entirely
+        if (!orbitLinesVisible)
+        {
+            foreach (var t in live)
+            {
+                t.enabled = false;
+                t.emitting = false;
+            }
+            bakedParent.SetActive(false);
+            return;
+        }
+
+        // Live trails mode
+        if (useLiveTrails)
+        {/*
+            // Active set
+            foreach (var t in live)
+            {
+                t.enabled = true;
+                t.emitting = true;
+            }
+
+            // Inactive set must NOT accumulate history
+            foreach (var t in inactive)
+            {
+                t.enabled = false;
+                t.emitting = false;
+            }
+
+            bakedParent.SetActive(false);
+*//*
+            bakedParent.SetActive(true);
+            return;
+        }
+
+        // Prebaked mode
+        if (useBakedTrails)
+        {
+            // Live trails off
+            foreach (var t in live)
+            {
+                t.enabled = false;
+                t.emitting = false;
+            }
+
+            // Inactive trails also off
+            foreach (var t in inactive)
+            {
+                t.enabled = false;
+                t.emitting = false;
+            }
+
+            bakedParent.SetActive(true);
+        }
+    }*/
+
+    void ApplyOrbitState()
+    {
+        GameObject baked = bakedOrbitParent;
+        GameObject scaledBaked = scaledBakedOrbitParent;
+
+        // Planet sets
+        planetsParent.SetActive(!scaled);
+        scaledPlanetsParent.SetActive(scaled);
+
+        if (!orbitLinesVisible)
+        {
+            baked.SetActive(false);
+            scaledBaked.SetActive(false);
+            return;
+        }
+
+        // Prebaked only
+        if (useBakedTrails)
+        {
+            baked.SetActive(!scaled);
+            scaledBaked.SetActive(scaled);
+        }
+    }
+
+
+    /*public void OnOrbitToggleChanged(bool value)
+    {
+        orbitLinesVisible = value;
+
+        ApplyOrbitState();
+
+        //StartCoroutine(ResetTrails());
+    }*/
+// Called when the orbit lines toggle is changed
+    public void OnOrbitToggleChanged(bool value)
+    {
+        // Update state
+        orbitLinesVisible = value;
+
+        // If toggle off, both prebaked sets off
+        if (!orbitLinesVisible)
+        {
+            bakedOrbitParent.SetActive(false);
+            scaledBakedOrbitParent.SetActive(false);
+            return;
+        }
+
+        // Toggle on: show only the correct prebaked set based on scale
+        if (scaled)
+        {
+            bakedOrbitParent.SetActive(false);
+            scaledBakedOrbitParent.SetActive(true);
+        }
+        else
+        {
+            bakedOrbitParent.SetActive(true);
+            scaledBakedOrbitParent.SetActive(false);
+        }
+    }
+
+    // Called when switching between scaled and normal planets
+    public void SetScaleFromCheck()
+    {
+        // Flip scale
+        scaled = !scaled;
+
+        // Activate correct planet parent
+        planetsParent.SetActive(!scaled);
+        scaledPlanetsParent.SetActive(scaled);
+
+        // Show correct prebaked orbit if orbit lines are enabled
+        if (!orbitLinesVisible)
+        {
+            bakedOrbitParent.SetActive(false);
+            scaledBakedOrbitParent.SetActive(false);
+        }
+        else if (scaled)
+        {
+            bakedOrbitParent.SetActive(false);
+            scaledBakedOrbitParent.SetActive(true);
+        }
+        else
+        {
+            bakedOrbitParent.SetActive(true);
+            scaledBakedOrbitParent.SetActive(false);
+        }
+
+        // Update any coordinate frames if needed
+        UpdateCoordinateFrames();
+    }
+
+
+    //chECK if needed
     public void SetZoomLocationFromDropdown()
     {
         int value = zoomDropdown.value;
@@ -496,19 +653,14 @@ public class OrbitSimulator : MonoBehaviour
         playingToggle.isOn = true;
         SetPlayingFromCheck(true);
 
-        //reset scaled
-        //scaleToggle.isOn = false;
-        //scaled = false;
-        //SetScaleFromCheck();
-
         mainTeleporter.SetActive(true);
     }
 
+    //Check this needed
     void SetZoomActive(int value)
     {
         if (scaled)
         {
-            //Changed "planetLocation" to "platform"
             foreach (GameObject platform in scaledPlanetZoomLocations)
             {
                 platform.SetActive(false);
@@ -550,15 +702,4 @@ public class OrbitSimulator : MonoBehaviour
         showSunFrame = value;
         UpdateCoordinateFrames();
     }
-    
-    /*
-    void UpdateOrbitTrails()
-    {
-        TrailRenderer[] trails = scaled ? scaledOrbitTrails : orbitTrails;
-        foreach (var t in trails)
-        {
-            t.enabled = true;         // always visible
-            t.emitting = !usePrebakedOrbits; // live trails only if not prebaked
-        }
-    }*/
 }

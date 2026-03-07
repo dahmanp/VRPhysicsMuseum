@@ -681,8 +681,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1183023511}
         m_TargetAssemblyTypeName: OrbitSimulator, Assembly-CSharp
-        m_MethodName: SetOrbitCircleVisualFromCheck
-        m_Mode: 1
+        m_MethodName: OnOrbitToggleChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -691,7 +691,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &17609897
 GameObject:
   m_ObjectHideFlags: 0
@@ -11028,7 +11028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &403324387
 Transform:
   m_ObjectHideFlags: 0
@@ -11462,7 +11462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &410142297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15641,7 +15641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &567100157
 Transform:
   m_ObjectHideFlags: 0
@@ -18652,7 +18652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &684227786
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18941,7 +18941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &690126252
 Transform:
   m_ObjectHideFlags: 0
@@ -19549,7 +19549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &712007803
 Transform:
   m_ObjectHideFlags: 0
@@ -21038,7 +21038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &759537285
 Transform:
   m_ObjectHideFlags: 0
@@ -22722,6 +22722,10 @@ PrefabInstance:
     - target: {fileID: 8134302614855669005, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Name
       value: ZoomOutBase_TeleportAnchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134302614855669005, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28321,7 +28325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &963818050
 Transform:
   m_ObjectHideFlags: 0
@@ -34281,7 +34285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: -32.2
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34289,11 +34293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6664746
+      value: 0.9989999
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.x
@@ -34301,7 +34305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7455278
+      value: 0.044712253
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.z
@@ -34313,7 +34317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -263.591
+      value: 5.125
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -34784,20 +34788,24 @@ MonoBehaviour:
   scaledSunFrame: {fileID: 1562016514}
   showEarthFrame: 0
   showSunFrame: 0
+  orbitLinesVisible: 1
+  useLiveTrails: 1
+  useBakedTrails: 0
+  orbitTrails: []
+  scaledOrbitTrails: []
+  bakedOrbitParent: {fileID: 252616939}
+  scaledBakedOrbitParent: {fileID: 1531926965}
   startYear: 2025
   startMonth: 9
   startDay: 21
   playSimulation: 1
   timeSpeed: 3
-  orbitTrails: []
-  scaledOrbitTrails: []
   distanceScale: 0.00000001
   timeDropdown: {fileID: 992904219}
   scaleToggle: {fileID: 899326559}
   earthToggle: {fileID: 1469735008}
   sunToggle: {fileID: 1230690507}
   playingToggle: {fileID: 1848164314}
-  orbitVisualToggle: {fileID: 15860074}
   monthSlider: {fileID: 1045963185}
   daySlider: {fileID: 66570573}
   yearSlider: {fileID: 1048388942}
@@ -35544,7 +35552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: af3a609f3b06600409a356f4e8ba91ba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -38094,7 +38102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1290006634
 Transform:
   m_ObjectHideFlags: 0
@@ -38708,7 +38716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1297344250
 Transform:
   m_ObjectHideFlags: 0
@@ -43533,7 +43541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1472884910
 Transform:
   m_ObjectHideFlags: 0
@@ -46665,7 +46673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1574420338
 Transform:
   m_ObjectHideFlags: 0
@@ -48285,7 +48293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1618385279
 Transform:
   m_ObjectHideFlags: 0
@@ -49370,7 +49378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1655900580
 Transform:
   m_ObjectHideFlags: 0
@@ -51043,7 +51051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1707369637
 Transform:
   m_ObjectHideFlags: 0
@@ -54065,7 +54073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1820156335
 Transform:
   m_ObjectHideFlags: 0
@@ -55255,7 +55263,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1849766685
 GameObject:
   m_ObjectHideFlags: 0
@@ -59733,7 +59741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2017867174
 Transform:
   m_ObjectHideFlags: 0

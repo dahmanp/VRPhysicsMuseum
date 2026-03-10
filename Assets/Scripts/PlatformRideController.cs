@@ -16,23 +16,14 @@ public class PlatformRideController : MonoBehaviour
             Debug.LogError("FollowPlanet component not found on XR Base!");
     }
 
-    //Called when player clicks the button on the teleporter
     public void ToggleRidePlatform()
     {
         if (followPlanet == null) return;
 
-        // Toggle FollowPlanet on/off
         followPlanet.enabled = !followPlanet.enabled;
-        Debug.Log("FollowPlanet enabled: " + followPlanet.enabled);
+        platform.SetActive(followPlanet.enabled);
 
-        // Toggle the platform itself on/off
-        if (platform.activeSelf == true)
-        {
-            platform.SetActive(false);
-        }
-        else
-        {
-            platform.SetActive(true);
-        }
+        Debug.Log("FollowPlanet enabled: " + followPlanet.enabled);
     }
+
 }

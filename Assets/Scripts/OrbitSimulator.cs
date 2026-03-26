@@ -453,7 +453,7 @@ public class OrbitSimulator : MonoBehaviour
     {
         int value = timeDropdown.value;
         timeSpeed = (TimeSpeed)value;
-        zoomDropdown.value = value;
+        //zoomDropdown.value = value;
 
         UpdateTrailModeFromTimeSpeed();
         ApplyOrbitState();
@@ -638,7 +638,7 @@ public class OrbitSimulator : MonoBehaviour
         UpdateCoordinateFrames();
     }
 
-
+/*
     //chECK if needed
     public void SetZoomLocationFromDropdown()
     {
@@ -655,7 +655,7 @@ public class OrbitSimulator : MonoBehaviour
 
         mainTeleporter.SetActive(true);
     }
-
+*/
     //Check this needed
     void SetZoomActive(int value)
     {

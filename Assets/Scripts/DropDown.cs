@@ -1,5 +1,5 @@
 /**
-I am planning on refactoring this, but it works for now.
+It would probably smart to refactor this.
 **/
 using System.Collections;
 using System.Collections.Generic;

@@ -43,6 +43,9 @@ public class OrbitSimulator : MonoBehaviour
     public GameObject mainTeleporter;
     public int currOrbit;
 
+    public GameObject[] scaledLabels;
+    public GameObject[] planetLabels;
+
     [Header("Orbit Anchor")]
     public Transform orbitAnchor;
 
@@ -101,6 +104,7 @@ public class OrbitSimulator : MonoBehaviour
     public Toggle earthToggle; //coordinate frame (not sure if needed)
     public Toggle sunToggle; //coordinate frame
     public Toggle playingToggle;
+    public Toggle labelToggle;
     //public Toggle orbitVisualToggle;
 
     public Slider monthSlider;
@@ -129,6 +133,7 @@ public class OrbitSimulator : MonoBehaviour
         ApplyOrbitState();
 
         UpdateCoordinateFrames();
+        toggleLabels();
     }
 
     void Update()
@@ -616,6 +621,7 @@ public class OrbitSimulator : MonoBehaviour
         // Activate correct planet parent
         planetsParent.SetActive(!scaled);
         scaledPlanetsParent.SetActive(scaled);
+        toggleLabels();
 
         // Show correct prebaked orbit if orbit lines are enabled
         if (!orbitLinesVisible)
@@ -676,6 +682,45 @@ public class OrbitSimulator : MonoBehaviour
             planetZoomLocations[value].SetActive(true);
         }
         currOrbit = value;
+    }
+    
+    public void toggleLabels()
+    {
+        if (labelToggle.isOn == true)
+        {
+            if (scaled)
+            {
+                foreach (GameObject label in scaledLabels)
+                {
+                    label.SetActive(true);
+                }
+                foreach (GameObject label in planetLabels)
+                {
+                    label.SetActive(false);
+                }
+            }
+            else
+            {
+                foreach (GameObject label in planetLabels)
+                {
+                    label.SetActive(true);
+                }
+                foreach (GameObject label in scaledLabels)
+                {
+                    label.SetActive(false);
+                }
+            }
+        } else
+        {
+            foreach (GameObject platform in scaledLabels)
+            {
+                platform.SetActive(false);
+            }
+            foreach (GameObject platform in planetLabels)
+            {
+                platform.SetActive(false);
+            }
+        }
     }
 
     private void UpdateCoordinateFrames()

@@ -1,4 +1,7 @@
 using UnityEngine;
+using Unity.XR.CoreUtils;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class ResetTrigger : MonoBehaviour
 {

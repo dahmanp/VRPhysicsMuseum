@@ -1,3 +1,5 @@
+/*
+
 using UnityEngine;
 
 public class FollowPlanet : MonoBehaviour
@@ -32,5 +34,19 @@ public class FollowPlanet : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(flatLookDir.normalized, Vector3.up);
             transform.rotation = targetRotation; // Locked rotation
         }
+    }
+}
+*/
+
+using UnityEngine;
+
+public class FollowPlanet : MonoBehaviour
+{
+    public Transform planet; //Planet
+    public Vector3 offset;
+
+    void LateUpdate()
+    {
+        transform.position = planet.position + offset;
     }
 }

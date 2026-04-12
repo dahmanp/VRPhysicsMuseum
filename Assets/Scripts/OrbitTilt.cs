@@ -10,7 +10,7 @@ public class OrbitTilt : MonoBehaviour
     //Mathf.Sin()
     // And
     //Mathf.Cos()
-    public float tilt = 5;
+    /*public float tilt = 5;
     Quaternion rotationVector = Quaternion.Euler(0f, 0f, 0f);
 
     void Start()
@@ -39,5 +39,5 @@ public class OrbitTilt : MonoBehaviour
     void Update()
     {
         rotationVector = Quaternion.Euler(tilt, 0f, 0f);
-    }
+    }*/
 }

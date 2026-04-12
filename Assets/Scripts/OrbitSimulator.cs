@@ -106,6 +106,7 @@ public class OrbitSimulator : MonoBehaviour
     public Toggle playingToggle;
     public Toggle labelToggle;
     //public Toggle orbitVisualToggle;
+    public Toggle playingTogglePlatform;
 
     public Slider monthSlider;
     public Slider daySlider;
@@ -134,6 +135,9 @@ public class OrbitSimulator : MonoBehaviour
 
         UpdateCoordinateFrames();
         toggleLabels();
+
+        playingToggle.isOn = true;
+        playingTogglePlatform.isOn = true;
     }
 
     void Update()
@@ -373,18 +377,30 @@ public class OrbitSimulator : MonoBehaviour
         if (playSimulation)
         {
             playSimulation = false;
-            if (platform)
+            //playingToggle.isOn = false;
+            //playingTogglePlatform.isOn = false;
+            /*if (platform)
             {
                 playingToggle.isOn = false;
             }
+            if (!platform)
+            {
+                playingTogglePlatform.isOn = false;
+            }*/
         }
         else
         {
             playSimulation = true;
-            if (platform)
+            //playingToggle.isOn = true;
+            //playingTogglePlatform.isOn = true;
+            /*if (platform)
             {
                 playingToggle.isOn = true;
             }
+            if (!platform)
+            {
+                playingTogglePlatform.isOn = true;
+            }*/
         }
     }
 

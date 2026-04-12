@@ -463,7 +463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &15752526
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9006,7 +9006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9699390fc34d47912f2b7362c174f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilt: 5
 --- !u!1001 &256795354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12737,7 +12736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Planet Earth
+  m_text: The Planet Mercury
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15020,7 +15019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &410142297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16031,7 +16030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &436488926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21717,7 +21716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &592604826
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27537,7 +27536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &747223570
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34775,7 +34774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &913731758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35027,7 +35026,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1183023511}
         m_TargetAssemblyTypeName: OrbitSimulator, Assembly-CSharp
         m_MethodName: SetPlayingFromCheck
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -35036,7 +35035,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &916840570
 GameObject:
   m_ObjectHideFlags: 0
@@ -44826,7 +44825,7 @@ MonoBehaviour:
   startYear: 2025
   startMonth: 9
   startDay: 21
-  playSimulation: 0
+  playSimulation: 1
   timeSpeed: 3
   distanceScale: 0.00000001
   timeDropdown: {fileID: 992904219}
@@ -44835,6 +44834,7 @@ MonoBehaviour:
   sunToggle: {fileID: 1230690507}
   playingToggle: {fileID: 1848164314}
   labelToggle: {fileID: 1719165080}
+  playingTogglePlatform: {fileID: 915858181}
   monthSlider: {fileID: 1045963185}
   daySlider: {fileID: 66570573}
   yearSlider: {fileID: 1048388942}
@@ -49781,7 +49781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1292669521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58565,7 +58565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9699390fc34d47912f2b7362c174f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilt: 5
 --- !u!1 &1531999723
 GameObject:
   m_ObjectHideFlags: 0
@@ -64219,7 +64218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660910397}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: -0, y: 0.19278046, z: -0, w: 0.98124194}
   m_LocalPosition: {x: 11.669, y: 5.96, z: 0.014653206}
   m_LocalScale: {x: 2, y: 0.137208, z: 2}
   m_ConstrainProportionsScale: 0
@@ -64228,7 +64227,7 @@ Transform:
   - {fileID: 1592576884}
   - {fileID: 1657152130}
   m_Father: {fileID: 1422868518}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 22.23, z: 0}
 --- !u!136 &1660910399
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70856,7 +70855,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1183023511}
         m_TargetAssemblyTypeName: OrbitSimulator, Assembly-CSharp
         m_MethodName: SetPlayingFromCheck
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -70865,7 +70864,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1849766685
 GameObject:
   m_ObjectHideFlags: 0
@@ -79357,7 +79356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2040917504
 RectTransform:
   m_ObjectHideFlags: 0

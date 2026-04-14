@@ -114,7 +114,7 @@ public class OrbitSimulator : MonoBehaviour
     public TMP_Text monthLabel;
     public TMP_Text dayLabel;
     public TMP_Text yearLabel;
-    public TMP_Dropdown zoomDropdown;
+    public TMP_Dropdown platformTimeDropdown;
 
     //private bool usePrebakedOrbits = false;
 
@@ -470,10 +470,21 @@ public class OrbitSimulator : MonoBehaviour
         yearLabel.text = yearSlider.value.ToString();
     }
 
-    public void SetTimeSpeedFromDropdown()
+    public void SetTimeSpeedFromDropdown(bool platform)
     {
-        int value = timeDropdown.value;
-        timeSpeed = (TimeSpeed)value;
+        if (platform)
+        {
+            int value = platformTimeDropdown.value;
+            timeSpeed = (TimeSpeed)value;
+            timeDropdown.value = platformTimeDropdown.value;
+        }
+        else
+        {
+            int value = timeDropdown.value;
+            timeSpeed = (TimeSpeed)value;
+            platformTimeDropdown.value = timeDropdown.value;
+        }
+            
         //zoomDropdown.value = value;
 
         UpdateTrailModeFromTimeSpeed();

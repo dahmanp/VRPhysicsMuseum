@@ -37531,7 +37531,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1183023511}
         m_TargetAssemblyTypeName: OrbitSimulator, Assembly-CSharp
         m_MethodName: SetTimeSpeedFromDropdown
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -44825,7 +44825,7 @@ MonoBehaviour:
   startYear: 2025
   startMonth: 9
   startDay: 21
-  playSimulation: 1
+  playSimulation: 0
   timeSpeed: 3
   distanceScale: 0.00000001
   timeDropdown: {fileID: 992904219}
@@ -44841,7 +44841,7 @@ MonoBehaviour:
   monthLabel: {fileID: 157743481}
   dayLabel: {fileID: 1123523593}
   yearLabel: {fileID: 941884105}
-  zoomDropdown: {fileID: 680152329}
+  platformTimeDropdown: {fileID: 2142631537}
 --- !u!1001 &1183411744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82262,14 +82262,14 @@ MonoBehaviour:
       - m_Target: {fileID: 1183023511}
         m_TargetAssemblyTypeName: OrbitSimulator, Assembly-CSharp
         m_MethodName: SetTimeSpeedFromDropdown
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &2142631538

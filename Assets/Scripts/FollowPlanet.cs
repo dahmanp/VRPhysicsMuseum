@@ -42,8 +42,36 @@ using UnityEngine;
 
 public class FollowPlanet : MonoBehaviour
 {
+    public bool player;
     public Transform planet; //Planet
+    public Transform[] planetList;
     public Vector3 offset;
+    public Vector3 defaultOffset;
+
+    void Update()
+    {
+        if (player == true)
+        {
+            if (planet == planetList[1] || planet == planetList[3] || planet == planetList[5] || planet == planetList[7])
+            {
+                offset = new Vector3(-1, -1, 0);
+                Debug.Log("small");
+            }
+            else if (planet == planetList[9] || planet == planetList[11])
+            {
+                offset = new Vector3(-3, -3, 0);
+                Debug.Log("medium");
+            }
+            else if (planet == planetList[13] || planet == planetList[15])
+            {
+                offset = new Vector3(-2, -2, 0);
+                Debug.Log("large");
+            } else
+            {
+                offset = defaultOffset;
+            }
+        }
+    }
 
     void LateUpdate()
     {

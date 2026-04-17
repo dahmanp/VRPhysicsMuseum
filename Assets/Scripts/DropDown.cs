@@ -15,13 +15,14 @@ public class DropDown : MonoBehaviour
     public TextMeshProUGUI[] textObjects;
     public TextMeshProUGUI headerText;
     public OrbitSimulator orbitSimulator;
-
+    public GameObject teleporter;
 
     //HAS TO MATCH DROPDOWN ORDER OR ELSE IT BREAKS
     public Transform[] planets;//Array of the planet objects (0-7 unscaled, 8-x scaled)
 
     public void planetChanged()
     {
+        teleporter.SetActive(true);
         for (int i = 0; i < textObjects.Length; i++)
         {
             textObjects[i].gameObject.SetActive(false);
@@ -45,6 +46,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[8];
                         followPlanetPlatform.planet = planets[8];
+                        followPlanetPlatform.offset = new Vector3(-1, -1, 0);
                     }
                     break;
                 case 1:
@@ -61,6 +63,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[9];
                         followPlanetPlatform.planet = planets[9];
+                        followPlanetPlatform.offset = new Vector3(-1, -1, 0);
                     }
                     break;
                 case 2:
@@ -77,6 +80,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[10];
                         followPlanetPlatform.planet = planets[10];
+                        followPlanetPlatform.offset = new Vector3(-1, -1, 0);
                     }
                     break;
                 case 3:
@@ -93,6 +97,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[11];
                         followPlanetPlatform.planet = planets[11];
+                        followPlanetPlatform.offset = new Vector3(-1, -1, 0);
                     }
                     break;
                 case 4:
@@ -109,6 +114,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[12];
                         followPlanetPlatform.planet = planets[12];
+                        followPlanetPlatform.offset = new Vector3(-3, -3, 0);
                     }
                     break;
                 case 5:
@@ -125,6 +131,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[13];
                         followPlanetPlatform.planet = planets[13];
+                        followPlanetPlatform.offset = new Vector3(-3, -3, 0);
                     }
                     break;
                 case 6:
@@ -141,6 +148,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[14];
                         followPlanetPlatform.planet = planets[14];
+                        followPlanetPlatform.offset = new Vector3(-2, -2, 0);
                     }
                     break;
                 case 7:
@@ -157,6 +165,7 @@ public class DropDown : MonoBehaviour
                     {
                         followPlanetPlayer.planet = planets[15];
                         followPlanetPlatform.planet = planets[15];
+                        followPlanetPlatform.offset = new Vector3(-2, -2, 0);
                     }
                     break;
             }

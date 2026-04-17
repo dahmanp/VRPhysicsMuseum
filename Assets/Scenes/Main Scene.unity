@@ -8858,7 +8858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &252616940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24809,6 +24809,7 @@ MonoBehaviour:
   - {fileID: 592604827}
   headerText: {fileID: 346716198}
   orbitSimulator: {fileID: 1183023511}
+  teleporter: {fileID: 2057982937}
   planets:
   - {fileID: 2067755840}
   - {fileID: 1008029211}
@@ -38158,7 +38159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669005, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44136,6 +44137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin Hands (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.38
@@ -44825,7 +44830,7 @@ MonoBehaviour:
   startYear: 2025
   startMonth: 9
   startDay: 21
-  playSimulation: 0
+  playSimulation: 1
   timeSpeed: 3
   distanceScale: 0.00000001
   timeDropdown: {fileID: 992904219}
@@ -64218,16 +64223,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660910397}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.19278046, z: -0, w: 0.98124194}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 11.669, y: 5.96, z: 0.014653206}
-  m_LocalScale: {x: 2, y: 0.137208, z: 2}
+  m_LocalScale: {x: 2.75, y: 0.137208, z: 2.5363665}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 511346519}
   - {fileID: 1592576884}
   - {fileID: 1657152130}
   m_Father: {fileID: 1422868518}
-  m_LocalEulerAnglesHint: {x: 0, y: 22.23, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!136 &1660910399
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -64316,8 +64321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07d3766fd89ca84e8f68dd84fa2eb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   planet: {fileID: 650748677}
-  offset: {x: 0, y: -4, z: 0}
+  planetList: []
+  offset: {x: -1.5, y: -1, z: 0}
+  defaultOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1660910403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80843,8 +80851,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07d3766fd89ca84e8f68dd84fa2eb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 1
   planet: {fileID: 650748677}
-  offset: {x: 0, y: -4, z: 0}
+  planetList:
+  - {fileID: 2067755840}
+  - {fileID: 1531242074}
+  - {fileID: 1008029211}
+  - {fileID: 360795531}
+  - {fileID: 650748677}
+  - {fileID: 389387463}
+  - {fileID: 1183411745}
+  - {fileID: 1728045610}
+  - {fileID: 1313945502}
+  - {fileID: 88684798}
+  - {fileID: 1970871889}
+  - {fileID: 1887191633}
+  - {fileID: 636185809}
+  - {fileID: 799539193}
+  - {fileID: 968578891}
+  - {fileID: 1762334941}
+  offset: {x: -1.5, y: -1, z: 0}
+  defaultOffset: {x: -1.5, y: -1, z: 0}
 --- !u!114 &2090678956
 MonoBehaviour:
   m_ObjectHideFlags: 0

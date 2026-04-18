@@ -26,10 +26,8 @@ public class TogglePlatformVisibility : MonoBehaviour
 
     public void disableRooms()
     {
-        Debug.Log("called");
         foreach(GameObject obj in projectRooms)
         {
-            Debug.Log("called 2");
             obj.SetActive(false);
         }
     }

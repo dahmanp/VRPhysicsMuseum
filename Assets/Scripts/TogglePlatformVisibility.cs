@@ -3,10 +3,15 @@ using UnityEngine;
 public class TogglePlatformVisibility : MonoBehaviour
 {
     public GameObject platform;
+    public GameObject[] projectRooms;
+    public bool zoomOut;
 
     void Start()
     {
-        platform.SetActive(false);
+        if (!zoomOut)
+        {
+            platform.SetActive(false);
+        }
     }
 
     public void platformOn()
@@ -19,4 +24,19 @@ public class TogglePlatformVisibility : MonoBehaviour
         platform.SetActive(false);
     }
 
+    public void disableRooms()
+    {
+        foreach(GameObject obj in projectRooms)
+        {
+            obj.SetActive(false);
+        }
+    }
+
+    public void enableRooms()
+    {
+        foreach (GameObject obj in projectRooms)
+        {
+            obj.SetActive(true);
+        }
+    }
 }

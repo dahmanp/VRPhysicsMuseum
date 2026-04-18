@@ -5,8 +5,9 @@ public class OrbitLoader : MonoBehaviour
     public OrbitData orbitData;
     public OrbitData defaultOrbitData;
     public LineRenderer lineRenderer;
-    Quaternion rotationVector = Quaternion.Euler(5f, 0f, 0f);
-    //public int rotationVector = 10;
+    public Transform orbitAnchor;
+
+    public Quaternion rotationVector = Quaternion.Euler(0f, 0f, 10f);
 
     void Start()
     {
@@ -36,13 +37,15 @@ public class OrbitLoader : MonoBehaviour
 
     public void changeAngle()
     {
+        Vector3 pivot = orbitAnchor.position;
 
         for (int j = 0; j < orbitData.points.Length; j++)
         {
-            orbitData.points[j] = rotationVector * orbitData.points[j];
+            Vector3 offset = orbitData.points[j] - pivot;
+            offset = rotationVector * offset;             
+            orbitData.points[j] = pivot + offset;        
         }
-        lineRenderer.SetPositions(orbitData.points);
 
-        //rotationVector = Quaternion.Euler(tilt, 0f, 0f);
+        lineRenderer.SetPositions(orbitData.points);
     }
 }

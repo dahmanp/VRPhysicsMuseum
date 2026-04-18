@@ -6,8 +6,9 @@ public class OrbitLoader : MonoBehaviour
     public OrbitData defaultOrbitData;
     public LineRenderer lineRenderer;
     public Transform orbitAnchor;
+    public Transform planet;
 
-    public Quaternion rotationVector = Quaternion.Euler(0f, 0f, 10f);
+    public Quaternion rotationVector = Quaternion.Euler(0f, 0f, 1f);
 
     void Start()
     {
@@ -22,8 +23,11 @@ public class OrbitLoader : MonoBehaviour
             Debug.LogError("OrbitLoader: OrbitData has no points.");
             return;
         }
+        setDefault();
+    }
 
-
+    public void setDefault()
+    {
         lineRenderer.positionCount = orbitData.points.Length;
 
         for (int j = 0; j < orbitData.points.Length; j++)
@@ -32,18 +36,19 @@ public class OrbitLoader : MonoBehaviour
         }
 
         lineRenderer.SetPositions(orbitData.points);
-
     }
 
-    public void changeAngle()
+    public void changeAngle(float multiplier)
     {
+        setDefault();
         Vector3 pivot = orbitAnchor.position;
+        Quaternion mult = Quaternion.Euler(0f, 0f, (multiplier));
 
         for (int j = 0; j < orbitData.points.Length; j++)
         {
             Vector3 offset = orbitData.points[j] - pivot;
-            offset = rotationVector * offset;             
-            orbitData.points[j] = pivot + offset;        
+            offset = mult * offset;             
+            orbitData.points[j] = pivot + offset;
         }
 
         lineRenderer.SetPositions(orbitData.points);

@@ -48,6 +48,7 @@ public class OrbitSimulator : MonoBehaviour
 
     [Header("Orbit Anchor")]
     public Transform orbitAnchor;
+    public Transform orbitAnchorDefault;
 
     [Header("Coordinate Frames")]
     public GameObject earthFrame;
@@ -67,7 +68,8 @@ public class OrbitSimulator : MonoBehaviour
     public TrailRenderer[] scaledOrbitTrails;
     public GameObject bakedOrbitParent;
     public GameObject scaledBakedOrbitParent;
-
+    public OrbitLoader[] bakedLoaders;
+    public OrbitLoader[] scaledBakedLoaders;
 
     [Header("Simulation Start Date")]
     public int startYear = 2004;
@@ -114,6 +116,8 @@ public class OrbitSimulator : MonoBehaviour
     public TMP_Text monthLabel;
     public TMP_Text dayLabel;
     public TMP_Text yearLabel;
+    public TMP_Text tiltLabel;
+    public Slider tiltSlider;
     public TMP_Dropdown platformTimeDropdown;
 
     //private bool usePrebakedOrbits = false;
@@ -122,6 +126,9 @@ public class OrbitSimulator : MonoBehaviour
 
     void Start()
     {
+        orbitAnchor.rotation = orbitAnchorDefault.rotation;
+        scaledBakedLoaders = scaledBakedOrbitParent.GetComponents<OrbitLoader>();
+        bakedLoaders = bakedOrbitParent.GetComponents<OrbitLoader>();
         epochJD = JulianDate(2004, 4, 7);
         planetsParent.SetActive(!scaled);
         scaledPlanetsParent.SetActive(scaled);
@@ -468,6 +475,29 @@ public class OrbitSimulator : MonoBehaviour
         monthLabel.text = monthSlider.value.ToString();
         dayLabel.text = daySlider.value.ToString();
         yearLabel.text = yearSlider.value.ToString();
+    }
+
+    public void UpdateTiltSliderLabel()
+    {
+        tiltLabel.text = tiltSlider.value.ToString();
+    }
+
+    /// <summary>
+    /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+    public void UpdateTilt()
+    {
+        foreach(OrbitLoader loader in scaledBakedLoaders)
+        {
+            loader.changeAngle(tiltSlider.value);
+        }
+        foreach (OrbitLoader loader in bakedLoaders)
+        {
+            loader.changeAngle(tiltSlider.value);
+        }
+
+        orbitAnchor.rotation = orbitAnchorDefault.rotation;
+        orbitAnchor.rotation = orbitAnchor.rotation * Quaternion.Euler(0f, 0f, tiltSlider.value);
     }
 
     public void SetTimeSpeedFromDropdown(bool platform)

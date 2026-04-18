@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f1dce1420a80bc49a1fe6db35017cbb, type: 3}
-  m_Name: MercuryOrbitData
+  m_Name: DEFAULTMercuryOrbitData
   m_EditorClassIdentifier: 
   points:
   - {x: 12.879671, y: 7.749275, z: -2.295822}

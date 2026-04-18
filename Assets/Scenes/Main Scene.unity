@@ -10656,7 +10656,7 @@ PrefabInstance:
       objectReference: {fileID: 2090678939}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: platformTeleport
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: platforms.Array.size
@@ -10736,12 +10736,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1849975075}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -10751,8 +10755,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: enableRooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: enableRooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+      propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TogglePlatformVisibility, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -10776,19 +10788,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.714
+      value: 0.287
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.027493037
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.99962205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -10800,7 +10812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -176.849
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -10817,7 +10829,7 @@ PrefabInstance:
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2090678956}
+      objectReference: {fileID: 1849975075}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -10828,7 +10840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleRidePlatform
+      value: enableRooms
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -10836,7 +10848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlatformRideController, Assembly-CSharp
+      value: TogglePlatformVisibility, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -16739,8 +16751,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461721389}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -22.4, y: 0, z: -19.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16748,7 +16760,7 @@ Transform:
   - {fileID: 1894140506}
   - {fileID: 1216481655}
   - {fileID: 1394858903}
-  m_Father: {fileID: 832154287}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &462717447
 PrefabInstance:
@@ -31971,7 +31983,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1908712979}
-  - {fileID: 461721390}
   - {fileID: 155898071}
   - {fileID: 108131799}
   - {fileID: 1278508008}
@@ -44935,7 +44946,7 @@ MonoBehaviour:
   startYear: 2025
   startMonth: 9
   startDay: 21
-  playSimulation: 0
+  playSimulation: 1
   timeSpeed: 3
   distanceScale: 0.00000001
   timeDropdown: {fileID: 992904219}
@@ -56295,7 +56306,7 @@ PrefabInstance:
       objectReference: {fileID: 304064273}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -56304,7 +56315,7 @@ PrefabInstance:
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1465194143}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -56315,7 +56326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: disableRooms
+      value: HideArrowOnTeleport
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -56323,7 +56334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TogglePlatformVisibility, Assembly-CSharp
+      value: Unity.VRTemplate.AnchorVisuals, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_Teleporting.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -56347,7 +56358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.193616
+      value: 1.1936162
       objectReference: {fileID: 0}
     - target: {fileID: 8134302614855669011, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56400,30 +56411,31 @@ PrefabInstance:
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2090678956}
+      objectReference: {fileID: 2113639627}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1660910403}
+      objectReference: {fileID: 1465194144}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleRidePlatform
+      value: disableRooms
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: platformOn
+      value: RequestTeleport
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlatformRideController, Assembly-CSharp
+      value: TogglePlatformVisibility, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: TogglePlatformVisibility, Assembly-CSharp
+      value: UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationAnchor,
+        Unity.XR.Interaction.Toolkit
       objectReference: {fileID: 0}
     - target: {fileID: 8239650406627561777, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -56453,6 +56465,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2dd7fabdb14fca498bd9e0def11ab19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1465194144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7904545763372973562, guid: c4a645c929982ea41a52b5037ee7d94d, type: 3}
+  m_PrefabInstance: {fileID: 1465194140}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465194142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2f4617667341945b5a7756e14b62d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1469735006
@@ -83095,6 +83118,7 @@ SceneRoots:
   - {fileID: 1089844881}
   - {fileID: 149026580}
   - {fileID: 1157300733}
+  - {fileID: 461721390}
   - {fileID: 832154287}
   - {fileID: 2045478830}
   - {fileID: 561308078}

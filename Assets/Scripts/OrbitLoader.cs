@@ -6,9 +6,7 @@ public class OrbitLoader : MonoBehaviour
     public OrbitData defaultOrbitData;
     public LineRenderer lineRenderer;
     public Transform orbitAnchor;
-    public Transform planet;
-
-    public Quaternion rotationVector = Quaternion.Euler(0f, 0f, 1f);
+    public Transform orbitAnchorDefault;
 
     void Start()
     {

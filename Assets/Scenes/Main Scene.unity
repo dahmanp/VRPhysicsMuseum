@@ -6226,7 +6226,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 464492433}
   - {fileID: 1941742365}
   - {fileID: 2138238927}
   - {fileID: 2096267563}
@@ -9069,9 +9068,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 87537fbe0b4cb1d459504f5688e53a7b, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: f43f6cf8b9b84d644bed7782d7e149f5, type: 2}
   lineRenderer: {fileID: 1500490989}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 636185809}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &252616941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9087,9 +9085,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 2c2ee5d72a72a5b49b7adfd1a8e2f85a, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: f92b27bd40211bd44b28ed1171498435, type: 2}
   lineRenderer: {fileID: 1288542518}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 968578891}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &252616942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9105,9 +9102,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: c9f5aca8c7427284b8c4d298a34334fd, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 4dc097140e4e45347b71193cc009450f, type: 2}
   lineRenderer: {fileID: 493911739}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1970871889}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &252616943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9123,9 +9119,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 3e996d10ca4e36b42bded3fc05779927, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 91f9205f88f69d6428063c7006e58958, type: 2}
   lineRenderer: {fileID: 837958591}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1313945502}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &252616944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9141,9 +9136,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 8ae7ef4f1b2cb2c47ac6c4dc32909ba8, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 6e63c7ea4fcf1444b9678ca48ced6a5b, type: 2}
   lineRenderer: {fileID: 774488375}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1183411745}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &252616945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9159,9 +9153,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: ee6593cb761c1df429d99c32b7e87ec3, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: beec7a9f4e3c94e4a950467592f8151e, type: 2}
   lineRenderer: {fileID: 864319376}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 650748677}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &252616946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9177,9 +9170,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: cdceb72e91c53b74f9b192cd74419765, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 8ffa14fc997b0cb4491e6d1864da6cc4, type: 2}
   lineRenderer: {fileID: 1509539724}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1008029211}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &252616947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9195,9 +9187,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: a0f15bd0c78215148965943d11ab8a0b, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 8dd26919e93696249aadf86c668eaa34, type: 2}
   lineRenderer: {fileID: 1451588819}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 2067755840}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!4 &252616948
 Transform:
   m_ObjectHideFlags: 0
@@ -9206,9 +9197,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252616939}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.1939898, y: 4.9692793, z: -0.03571701}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: -2.7990382, y: 1.8480763, z: 0}
+  m_LocalScale: {x: 0.25000003, y: 0.25000003, z: 0.25000003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1451588820}
@@ -9219,7 +9210,7 @@ Transform:
   - {fileID: 493911738}
   - {fileID: 1288542519}
   - {fileID: 1500490988}
-  m_Father: {fileID: 1422868518}
+  m_Father: {fileID: 999366166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &252616949
 MonoBehaviour:
@@ -17218,144 +17209,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: af3a609f3b06600409a356f4e8ba91ba, type: 3}
   m_PrefabInstance: {fileID: 463686298}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &464492432
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 464492433}
-  - component: {fileID: 464492435}
-  - component: {fileID: 464492434}
-  m_Layer: 0
-  m_Name: Title (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &464492433
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464492432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0836514, y: 1.3536003, z: 1.3535998}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 180891661}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 26.775394}
-  m_SizeDelta: {x: 53.33, y: 17.99}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &464492434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464492432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Year
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 14.76
-  m_fontSizeBase: 14.76
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &464492435
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464492432}
-  m_CullTransparentMesh: 1
 --- !u!1 &467281948
 GameObject:
   m_ObjectHideFlags: 0
@@ -18224,9 +18077,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494034644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: -2.7990382, y: 1.8480763, z: 0}
+  m_LocalScale: {x: 0.25000003, y: 0.25000003, z: 0.25000003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 389387463}
@@ -18238,7 +18091,7 @@ Transform:
   - {fileID: 1531242074}
   - {fileID: 1728045610}
   - {fileID: 5266847}
-  m_Father: {fileID: 1422868518}
+  m_Father: {fileID: 999366166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &494377905 stripped
 GameObject:
@@ -27365,9 +27218,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729461650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: -2.7990382, y: 1.8480763, z: 0}
+  m_LocalScale: {x: 0.25000003, y: 0.25000003, z: 0.25000003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 650748677}
@@ -27378,7 +27231,7 @@ Transform:
   - {fileID: 1970871889}
   - {fileID: 968578891}
   - {fileID: 636185809}
-  m_Father: {fileID: 1422868518}
+  m_Father: {fileID: 999366166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &731749560
 PrefabInstance:
@@ -38114,6 +37967,10 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1912170225}
+  - {fileID: 252616948}
+  - {fileID: 1531926967}
+  - {fileID: 729461651}
+  - {fileID: 494034645}
   m_Father: {fileID: 1422868518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
 --- !u!1 &999926335 stripped
@@ -55247,11 +55104,7 @@ Transform:
   - {fileID: 1183023510}
   - {fileID: 1660910398}
   - {fileID: 1849975071}
-  - {fileID: 729461651}
-  - {fileID: 494034645}
   - {fileID: 1160315799}
-  - {fileID: 252616948}
-  - {fileID: 1531926967}
   m_Father: {fileID: 2045478830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425685075
@@ -59408,7 +59261,6 @@ GameObject:
   - component: {fileID: 1531926972}
   - component: {fileID: 1531926973}
   - component: {fileID: 1531926974}
-  - component: {fileID: 1531926975}
   m_Layer: 0
   m_Name: PrebakedOrbits(SCALED)
   m_TagString: Untagged
@@ -59431,9 +59283,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 8432ef0daa01590448bf67c89b0f9a60, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: c2546bfb2ec93db4eb4d3448a7dca66d, type: 2}
   lineRenderer: {fileID: 916840572}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1531242074}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!4 &1531926967
 Transform:
   m_ObjectHideFlags: 0
@@ -59442,9 +59293,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531926965}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.1939898, y: 4.9692793, z: -0.03571701}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: -2.7990382, y: 1.8480763, z: 0}
+  m_LocalScale: {x: 0.25000003, y: 0.25000003, z: 0.25000003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 916840571}
@@ -59455,7 +59306,7 @@ Transform:
   - {fileID: 262634303}
   - {fileID: 785950099}
   - {fileID: 1261759521}
-  m_Father: {fileID: 1422868518}
+  m_Father: {fileID: 999366166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1531926968
 MonoBehaviour:
@@ -59472,9 +59323,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: de75415a742abef499d228dd550c3d14, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 3572245b8e0932942ac800e395488a4f, type: 2}
   lineRenderer: {fileID: 1475309490}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 389387463}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &1531926969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59490,9 +59340,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 6a748fea2837cba4491a43ced68d1d42, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 1de69b617637f4e4c8af10377c946e62, type: 2}
   lineRenderer: {fileID: 1979663148}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 360795531}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &1531926970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59508,9 +59357,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 9db77a07e694ea4428f36e14c349c97f, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 13746ff33f00d4944a0f53f58a5452d6, type: 2}
   lineRenderer: {fileID: 840976689}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1728045610}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &1531926971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59526,9 +59374,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 507b9a145487b4b4584f094be71f8993, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 610caf21d397a60489435c8cbf0ed088, type: 2}
   lineRenderer: {fileID: 383600834}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 88684798}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &1531926972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59544,9 +59391,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 45401e9d31e60f842b5a5fe93c27e799, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 4c1a13546b5dfad408e6b63932f87b2c, type: 2}
   lineRenderer: {fileID: 262634304}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1887191633}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &1531926973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59562,9 +59408,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: 622269b62f3cca5478722142f2504767, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: add22baf7dac13a4e95a8f9b3803d00f, type: 2}
   lineRenderer: {fileID: 785950100}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 1762334941}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!114 &1531926974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59580,21 +59425,8 @@ MonoBehaviour:
   orbitData: {fileID: 11400000, guid: b3bee3ca8f2aec8498b1bedc991ae1e8, type: 2}
   defaultOrbitData: {fileID: 11400000, guid: 15314ce18dbc2d94c9cbb313bb7ba99c, type: 2}
   lineRenderer: {fileID: 1261759522}
-  orbitAnchor: {fileID: 443751562}
-  planet: {fileID: 799539193}
-  rotationVector: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
---- !u!114 &1531926975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531926965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eb9699390fc34d47912f2b7362c174f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  orbitAnchor: {fileID: 999366166}
+  orbitAnchorDefault: {fileID: 443751562}
 --- !u!1 &1531999723
 GameObject:
   m_ObjectHideFlags: 0
@@ -66106,7 +65938,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696799758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.30756837, y: 0.44845995, z: 0.44846007}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66116,7 +65948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433.8, y: 11}
+  m_AnchoredPosition: {x: -433.8, y: -3.3999853}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1697234863
@@ -74408,7 +74240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343, y: 11}
+  m_AnchoredPosition: {x: -343, y: -3.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1887191632

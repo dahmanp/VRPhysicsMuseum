@@ -482,9 +482,6 @@ public class OrbitSimulator : MonoBehaviour
         tiltLabel.text = tiltSlider.value.ToString();
     }
 
-    /// <summary>
-    /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// </summary>
     public void UpdateTilt()
     {
         foreach(OrbitLoader loader in scaledBakedLoaders)

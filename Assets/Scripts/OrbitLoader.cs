@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class OrbitLoader : MonoBehaviour
 {
+    //VARIABLES----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     public OrbitData orbitData;
     public OrbitData defaultOrbitData;
     public LineRenderer lineRenderer;
     public Transform orbitAnchor;
     public Transform orbitAnchorDefault;
 
+    // SIMULATION--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     void Start()
     {
+        //-----------------NOTE TO FUTURE DEVS-----------------
+        //Simple checks to see if orbitData, lineRenderer, or orbitData.points are null. Script doesn't work without 'em!
         if (orbitData == null || lineRenderer == null)
         {
             Debug.LogError("OrbitLoader: Missing references.");
@@ -26,6 +32,8 @@ public class OrbitLoader : MonoBehaviour
 
     public void setDefault()
     {
+        //-----------------NOTE TO FUTURE DEVS-----------------
+        //Sets the position of each of the data points to its default position. This is necessary with the way we did the orbit lines.
         lineRenderer.positionCount = orbitData.points.Length;
 
         for (int j = 0; j < orbitData.points.Length; j++)
@@ -36,6 +44,8 @@ public class OrbitLoader : MonoBehaviour
         lineRenderer.SetPositions(orbitData.points);
     }
 
+    //-----------------NOTE TO FUTURE DEVS-----------------
+    //Changes the angle of the orbit lines based on a given multiplier. This is used in a slider to allow players to simply move the handle to tilt the orbit lines.
     public void changeAngle(float multiplier)
     {
         setDefault();

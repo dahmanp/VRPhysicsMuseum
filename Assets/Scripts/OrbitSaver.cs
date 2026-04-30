@@ -1,15 +1,3 @@
-/* Will clean up and explain according to guidelines later...
-
-Add this script to any TRAIL RENDERER (make sure NOT line render component)
-assign itself in the inspector, name it something, then when the render is 
-where you want it, press O key. It will save the positions in a scriptable
-object (this is what OrbitData script is). Then, to display, make a game
-object with a LINE renderer attached and put orbit loader on the game object
-and populate the orbit data object and LINE renderer in the inspector. You
-may have to mess with material and width.
-
-*/
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 #if UNITY_EDITOR
@@ -18,8 +6,21 @@ using UnityEditor;
 
 public class OrbitSaver : MonoBehaviour
 {
+    //VARIABLES----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
     public TrailRenderer trail;
     public string assetName = "OrbitData";
+
+    // SIMULATION--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //Add this script to any TRAIL RENDERER (make sure NOT line render component)
+    //assign itself in the inspector, name it something, then when the render is 
+    //where you want it, press O key, this will stop the simulation. It will save the positions in a scriptable
+    //object (this is what OrbitData script is). Then, to display, make a game
+    //object with a LINE RENDERER as a child and put orbit loader on the game object
+    //and populate the orbit data object and new child line renderer in the inspector. 
+
+    //Another note: I messed with the width of the renderers in the inspector to make them appear the same width even if they were far away.
 
     void Update()
     {
@@ -39,11 +40,9 @@ public class OrbitSaver : MonoBehaviour
             return;
         }
 
-        // Bake the trail into a mesh
         Mesh mesh = new Mesh();
         trail.BakeMesh(mesh, true);
 
-        // Extract centerline points from the mesh
         Vector3[] verts = mesh.vertices;
         int vertCount = verts.Length;
 
@@ -53,7 +52,6 @@ public class OrbitSaver : MonoBehaviour
             return;
         }
 
-        // The mesh is a ribbon: pairs of vertices form each segment
         int pointCount = vertCount / 2;
         Vector3[] centerline = new Vector3[pointCount];
 
@@ -61,7 +59,7 @@ public class OrbitSaver : MonoBehaviour
         {
             Vector3 a = verts[i * 2];
             Vector3 b = verts[i * 2 + 1];
-            centerline[i] = (a + b) * 0.5f; // midpoint of the ribbon
+            centerline[i] = (a + b) * 0.5f;
         }
 
 #if UNITY_EDITOR

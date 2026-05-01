@@ -34,12 +34,6 @@ public class OrbitSimulator : MonoBehaviour
     public GameObject scaledPlanetsParent;
     public bool scaled;
 
-    [Header("Planet Zoom Locations")]
-    public GameObject[] planetZoomLocations;
-    public GameObject[] scaledPlanetZoomLocations;
-    public GameObject mainTeleporter;
-    public int currOrbit;
-
     public GameObject[] scaledLabels;
     public GameObject[] planetLabels;
 
@@ -97,9 +91,6 @@ public class OrbitSimulator : MonoBehaviour
 
     [Header("UI")]
     public TMP_Dropdown timeDropdown;
-    public Toggle scaleToggle;
-    public Toggle earthToggle; //coordinate frame (not sure if needed)
-    public Toggle sunToggle; //coordinate frame
     public Toggle playingToggle;
     public Toggle labelToggle;
     public Toggle playingTogglePlatform;
@@ -114,8 +105,6 @@ public class OrbitSimulator : MonoBehaviour
     public Slider tiltSlider;
     public TMP_Dropdown platformTimeDropdown;
     bool isSyncingDropdowns = false;
-
-    //private bool usePrebakedOrbits = false;
 
     // SIMULATION--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -135,9 +124,6 @@ public class OrbitSimulator : MonoBehaviour
         ResetSimulation();
         InitializeAxialTilts(planets);
         InitializeAxialTilts(scaledPlanets);
-
-        setOrbitState(false);
-        ApplyOrbitState();
 
         UpdateCoordinateFrames();
         toggleLabels();
@@ -160,8 +146,6 @@ public class OrbitSimulator : MonoBehaviour
 
         Planet[] activePlanets = scaled ? scaledPlanets : planets;
 
-        ApplyOrbitState();
-
         foreach (var planet in activePlanets)
         {
             if (planet.body == null)
@@ -171,39 +155,6 @@ public class OrbitSimulator : MonoBehaviour
                 ComputeOrbitPosition(planet, simulationTimeSeconds);
 
             ApplyAxialRotation(planet, deltaSimSeconds);
-        }
-    }
-
-    //-----------------NOTE TO FUTURE DEVS-----------------
-    //LINE RENDER STUFF - MALIA ADD HERE
-    public void setOrbitState(bool on)
-    {
-        TrailRenderer[] orbitTrail = scaled ? scaledOrbitTrails : orbitTrails;
-        foreach (TrailRenderer orbit in orbitTrail)
-        {
-            if (on)
-            {
-                orbit.enabled = true;
-            }
-            else
-            {
-                orbit.enabled = false;
-                orbit.Clear();
-            }
-        }
-
-        TrailRenderer[] orbitTrail2 = !scaled ? scaledOrbitTrails : orbitTrails;
-        foreach (TrailRenderer orbit in orbitTrail2)
-        {
-            if (on)
-            {
-                orbit.enabled = true;
-            }
-            else
-            {
-                orbit.enabled = false;
-                orbit.Clear();
-            }
         }
     }
 
@@ -467,53 +418,8 @@ public class OrbitSimulator : MonoBehaviour
         }
 
         isSyncingDropdowns = false;
-
-        UpdateTrailModeFromTimeSpeed();
-        ApplyOrbitState();
     }
 
-    //-----------------NOTE TO FUTURE DEVS-----------------
-    // MALIA ADD HERE
-    void UpdateTrailModeFromTimeSpeed()
-    {
-        switch (timeSpeed)
-        {
-            case TimeSpeed.OneDayPerSecond:
-            case TimeSpeed.OneWeekPerSecond:
-                useLiveTrails = false;
-                useBakedTrails = true;
-                break;
-
-            default:
-                useLiveTrails = false;
-                useBakedTrails = true;
-                break;
-        }
-    }
-
-    //-----------------NOTE TO FUTURE DEVS-----------------
-    //MALIA ADD HERE
-    void ApplyOrbitState()
-    {
-        GameObject baked = bakedOrbitParent;
-        GameObject scaledBaked = scaledBakedOrbitParent;
-
-        planetsParent.SetActive(!scaled);
-        scaledPlanetsParent.SetActive(scaled);
-
-        if (!orbitLinesVisible)
-        {
-            baked.SetActive(false);
-            scaledBaked.SetActive(false);
-            return;
-        }
-
-        if (useBakedTrails)
-        {
-            baked.SetActive(!scaled);
-            scaledBaked.SetActive(scaled);
-        }
-    }
 
     //-----------------NOTE TO FUTURE DEVS-----------------
     //Changes whether the orbit lines are visible. Also checks if we are currently looking at the scaled vs not scaled planets.
@@ -539,7 +445,7 @@ public class OrbitSimulator : MonoBehaviour
             scaledBakedOrbitParent.SetActive(false);
         }
     }
-
+    
     //-----------------NOTE TO FUTURE DEVS-----------------
     //Sets whether the scaled planets or the not scaled planets are active.
     public void SetScaleFromCheck()
@@ -610,8 +516,10 @@ public class OrbitSimulator : MonoBehaviour
         }
     }
 
-    //-----------------NOTE TO FUTURE DEVS-----------------
-    //MALIA ADD HERE
+    //---------------NOTE TO FUTURE DEVS-----------------
+    //There are four coordinate frames- two for the sun depending on if its scaled or not and two for
+    //the Earth depending if it is scaled or not. If the toggle is hit, that changes a boolean called 
+    //____ShouldShow, and depending on if it is scaled or unscaled will change if it is set active
     private void UpdateCoordinateFrames()
     {
         // EARTH FRAME
@@ -626,7 +534,7 @@ public class OrbitSimulator : MonoBehaviour
     }
 
     //-----------------NOTE TO FUTURE DEVS-----------------
-    //MALIA ADD HERE
+    //
     public void OnEarthToggleChanged(bool value)
     {
         showEarthFrame = value;
